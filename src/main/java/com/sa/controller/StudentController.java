@@ -209,16 +209,17 @@ public class StudentController {
 		
 		List<TeacherProgress> progresses = studentService.getTeacherProgressByStudentId(studentId);
 		
-		for(int i=0;i<progresses.size();i++) {
-			int state = progresses.get(i).getState();
-			if(state ==0) {
-				progresses.get(i).setStateName("教师还未查看");
-			}else if(state ==1) {
-				progresses.get(i).setStateName("未通过");
-			}else {
-				progresses.get(i).setStateName("已通过");
-			}
-		}
+		
+//		for(int i=0;i<progresses.size();i++) {
+//			int state = progresses.get(i).getState();
+//			if(state ==0) {
+//				progresses.get(i).setStateName("教师还未查看");
+//			}else if(state ==1) {
+//				progresses.get(i).setStateName("未通过");
+//			}else {
+//				progresses.get(i).setStateName("已通过");
+//			}
+//		}
 		
 		
 		model.addAttribute("progressList", progresses);

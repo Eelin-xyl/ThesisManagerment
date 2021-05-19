@@ -380,28 +380,28 @@ INSERT INTO `user` VALUES ('48', '555', '123456', '1');
 DROP TRIGGER IF EXISTS `insert_studentNo_to_user`;
 DELIMITER ;;
 CREATE TRIGGER `insert_studentNo_to_user` AFTER INSERT ON `student` FOR EACH ROW BEGIN
-INSERT INTO t_user VALUES(null,NEW.studentNo,'123456',1);
+INSERT INTO user VALUES(null,NEW.studentNo,'123',1);
 END
 ;;
 DELIMITER ;
 DROP TRIGGER IF EXISTS `delete_studentNo_to_user`;
 DELIMITER ;;
 CREATE TRIGGER `delete_studentNo_to_user` AFTER DELETE ON `student` FOR EACH ROW BEGIN
-DELETE FROM t_user WHERE userNo=OLD.studentNo;
+DELETE FROM user WHERE userNo=OLD.studentNo;
 END
 ;;
 DELIMITER ;
 DROP TRIGGER IF EXISTS `insert_teacherNo_to_user`;
 DELIMITER ;;
 CREATE TRIGGER `insert_teacherNo_to_user` AFTER INSERT ON `teacher` FOR EACH ROW BEGIN
-INSERT INTO t_user VALUES(null,NEW.teacherNo,'6666',2);
+INSERT INTO user VALUES(null,NEW.teacherNo,'123',2);
 END
 ;;
 DELIMITER ;
 DROP TRIGGER IF EXISTS `delete_teacher_to_user`;
 DELIMITER ;;
 CREATE TRIGGER `delete_teacher_to_user` AFTER DELETE ON `teacher` FOR EACH ROW BEGIN 
- DELETE FROM t_user WHERE userNo=OLD.teacherNo;
+ DELETE FROM user WHERE userNo=OLD.teacherNo;
 END
 ;;
 DELIMITER ;
