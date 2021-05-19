@@ -19,7 +19,6 @@
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<!-- <h4>添加导师</h4> -->
 				<ul class="list-inline">
 					<li>Teacher Management</li>
 					<li>/</li>
