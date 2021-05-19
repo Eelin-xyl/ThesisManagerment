@@ -36,7 +36,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Information Management</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="${pageContext.request.contextPath}/admin/modifyPassword">Password Change</a>
+								<a href="${pageContext.request.contextPath}/admin/modifyPassword">Modify Password</a>
 							</li>
 						</ul>
 					</li>

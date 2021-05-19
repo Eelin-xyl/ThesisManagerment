@@ -19,18 +19,17 @@
 			
 		</div>
 		<div class="col-md-8">
-			<!-- <h4>修改密码</h4> -->
 			<ul class="list-inline">
 				<li>Information Management</li>
 				<li>/</li>
-				<li>Password Change</li>
+				<li>Modify Password</li>
 			</ul>
 			<form role="form" class="form-horizontal" action="${pageContext.request.contextPath}/modifyPassword" method="post">
 				<!-- 第一个是用户名  第二个是原始密码-->
 				<input type="hidden" class="form-control" name="currentUserNo" id="currentUserNo" value="${sessionScope.currentUser.userNo }">
 				<input type="hidden" class="form-control" name="db_password" id="db_password" value="${sessionScope.currentUser.password }">
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Current Password:</label>
+					<label class="col-sm-2 control-label">Old Password:</label>
 					<div class="col-sm-10">
 						<input type="password" class="form-control" name="oldPassword" id="oldPassword" onblur="getPassword();" required>
 					</div>
@@ -65,5 +64,4 @@
 		</div>
 		<div class="col-md-2"></div>
 	</div>
-</body>
-</html>
+</body>  
