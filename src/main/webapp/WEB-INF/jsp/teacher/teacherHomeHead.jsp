@@ -76,12 +76,11 @@
 								<a href="${pageContext.request.contextPath}/teacher/checkOppening">Audit Opening Report</a>
 							</li>
 							<li>
-								<a href="${pageContext.request.contextPath}/teacher/publishProgress">Issue Phase Task</a>
+								<a href="${pageContext.request.contextPath}/teacher/publishProgress">Publish Progress Notification</a>
 							</li>
-							<li>
-								<a href="${pageContext.request.contextPath}/teacher/checkProgress">Audit Phase Task</a>
-							</li>
-							
+<!-- 							<li> -->
+<%-- 								<a href="${pageContext.request.contextPath}/teacher/checkProgress">Audit Phase Task</a> --%>
+<!-- 							</li> -->
 						</ul>
 					</li>
 				</ul>

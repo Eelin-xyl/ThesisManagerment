@@ -218,7 +218,6 @@ public class StudentController {
 			}else {
 				progresses.get(i).setStateName("已通过");
 			}
-			
 		}
 		
 		

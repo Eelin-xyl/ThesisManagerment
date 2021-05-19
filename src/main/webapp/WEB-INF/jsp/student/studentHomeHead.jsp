@@ -73,7 +73,7 @@
 							</li>
 
 							<li>
-								<a href="${pageContext.request.contextPath}/student/sectionTask">Phase Tasks</a>
+								<a href="${pageContext.request.contextPath}/student/sectionTask">Progress Notification</a>
 							</li>
 						</ul>
 					</li>

@@ -397,19 +397,19 @@ public class TeacherServiceImpl implements ITeacherService {
 	}
 
 
-	public int passProgress(int id) {
-		// TODO Auto-generated method stub
-		int num = teacherProgressDao.passTeacherProgress(id);
-		
-		return num;
-	}
+//	public int passProgress(int id) {
+//		// TODO Auto-generated method stub
+//		int num = teacherProgressDao.passTeacherProgress(id);
+//		
+//		return num;
+//	}
 
 
-	public int failProgress(int id) {
-		// TODO Auto-generated method stub
-		int num = teacherProgressDao.failTeacherProgress(id);
-		return num;
-	}
+//	public int failProgress(int id) {
+//		// TODO Auto-generated method stub
+//		int num = teacherProgressDao.failTeacherProgress(id);
+//		return num;
+//	}
 
 	public ThesisInformation getInfoByStudentId(int studentId) {
 		// TODO Auto-generated method stub

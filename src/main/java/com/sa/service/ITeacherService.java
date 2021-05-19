@@ -155,9 +155,9 @@ public interface ITeacherService {
 	
 	Student getStudentInfoByStudentId(int studentId);
 	
-	int passProgress(int id);
-	
-	int failProgress(int id);
+//	int passProgress(int id);
+//	
+//	int failProgress(int id);
 
 	
 	ThesisInformation getInfoByStudentId(int studentId);

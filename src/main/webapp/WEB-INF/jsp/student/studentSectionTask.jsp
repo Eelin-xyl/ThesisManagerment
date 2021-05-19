@@ -26,7 +26,7 @@
 				
 				<table class="table">
 					<tr>
-						<td>Phase Tasks Description</td>
+						<td>Progress Notification Description</td>
 						<td>Status</td>
 					</tr>
 

@@ -20,9 +20,9 @@ public interface ITeacherProgressDao {
 	
 	int addTeacherProgress(TeacherProgress teacherProgress);
 	
-	int passTeacherProgress(int id);
-	
-	int failTeacherProgress(int id);
+//	int passTeacherProgress(int id);
+//	
+//	int failTeacherProgress(int id);
 	
 	List<TeacherProgress> getInfoByStudentId(int studentId);
 	

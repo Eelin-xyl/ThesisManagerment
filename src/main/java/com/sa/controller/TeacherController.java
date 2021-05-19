@@ -712,21 +712,21 @@ public class TeacherController {
 		return "teacher/main.jsp";
 	}
 	
-	@RequestMapping(value="/passProgress")
-	public String teacherPassProgress(HttpServletRequest request, @RequestParam("progressId") int progressId,Model model) throws IOException {
-		int num = teacherService.passProgress(progressId);
-		System.out.println("审核阶段任务通过："+num);
-		teacherCheckProgressForm(request, model);
-		return "teacher/teacherCheckProgressNotification.jsp";
-	}
+//	@RequestMapping(value="/passProgress")
+//	public String teacherPassProgress(HttpServletRequest request, @RequestParam("progressId") int progressId,Model model) throws IOException {
+//		int num = teacherService.passProgress(progressId);
+//		System.out.println("审核阶段任务通过："+num);
+//		teacherCheckProgressForm(request, model);
+//		return "teacher/teacherCheckProgressNotification.jsp";
+//	}
 	
-	@RequestMapping(value="/failProgress")
-	public String teacherFailProgress(HttpServletRequest request, @RequestParam("progressId") int progressId,Model model) throws IOException {
-		int num = teacherService.failProgress(progressId);
-		System.out.println("审核阶段任务未通过："+num);
-		teacherCheckProgressForm(request, model);
-		return "teacher/teacherCheckProgressNotification.jsp";
-	}
+//	@RequestMapping(value="/failProgress")
+//	public String teacherFailProgress(HttpServletRequest request, @RequestParam("progressId") int progressId,Model model) throws IOException {
+//		int num = teacherService.failProgress(progressId);
+//		System.out.println("审核阶段任务未通过："+num);
+//		teacherCheckProgressForm(request, model);
+//		return "teacher/teacherCheckProgressNotification.jsp";
+//	}
 	
 	@RequestMapping(value="/passThesisInfo")
 	public String teacherPassThesisInfo(HttpServletRequest request, @RequestParam("studentId") int studentId,Model model) throws IOException {
