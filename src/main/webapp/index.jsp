@@ -20,7 +20,8 @@
                     document.getElementById('message').style.display = 'none';
                 }, 1500);
             </script>
-
+            
+            
             <div class="container">
             <a href="${pageContext.request.contextPath}/quit">
                 <img src="assets/images/logo.png" width="30%" height="30%" />
