@@ -361,22 +361,22 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('15', 'admin', 'admin', '3');
-INSERT INTO `user` VALUES ('31', 't0001', '6666', '2');
-INSERT INTO `user` VALUES ('32', 's0001', '123456', '1');
-INSERT INTO `user` VALUES ('33', 't0002', '6666', '2');
-INSERT INTO `user` VALUES ('34', 't0003', '6666', '2');
-INSERT INTO `user` VALUES ('35', 's0002', '123456', '1');
-INSERT INTO `user` VALUES ('36', '2032999', '6666', '2');
-INSERT INTO `user` VALUES ('38', '7', '123456', '1');
-INSERT INTO `user` VALUES ('39', '9', '123456', '1');
-INSERT INTO `user` VALUES ('41', '2032111', '123456', '1');
-INSERT INTO `user` VALUES ('42', '2032222', '123456', '1');
-INSERT INTO `user` VALUES ('43', '2032333', '123456', '1');
-INSERT INTO `user` VALUES ('44', 't11', '6666', '2');
+INSERT INTO `user` VALUES ('15', 'admin', '123', '3');
+INSERT INTO `user` VALUES ('31', 't0001', '123', '2');
+INSERT INTO `user` VALUES ('32', 's0001', '123', '1');
+INSERT INTO `user` VALUES ('33', 't0002', '123', '2');
+INSERT INTO `user` VALUES ('34', 't0003', '123', '2');
+INSERT INTO `user` VALUES ('35', 's0002', '123', '1');
+INSERT INTO `user` VALUES ('36', '2032999', '123', '2');
+INSERT INTO `user` VALUES ('38', '7', '123', '1');
+INSERT INTO `user` VALUES ('39', '9', '123', '1');
+INSERT INTO `user` VALUES ('41', '2032111', '123', '1');
+INSERT INTO `user` VALUES ('42', '2032222', '123', '1');
+INSERT INTO `user` VALUES ('43', '2032333', '123', '1');
+INSERT INTO `user` VALUES ('44', 't11', '123', '2');
 INSERT INTO `user` VALUES ('46', '100', '123', '2');
-INSERT INTO `user` VALUES ('47', '2032686', '123456', '1');
-INSERT INTO `user` VALUES ('48', '555', '123456', '1');
+INSERT INTO `user` VALUES ('47', '2032686', '123', '1');
+INSERT INTO `user` VALUES ('48', '555', '123', '1');
 DROP TRIGGER IF EXISTS `insert_studentNo_to_user`;
 DELIMITER ;;
 CREATE TRIGGER `insert_studentNo_to_user` AFTER INSERT ON `student` FOR EACH ROW BEGIN
