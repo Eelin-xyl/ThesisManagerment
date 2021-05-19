@@ -87,11 +87,11 @@ public class AdminController {
 		for(int i=0;i<thesisList.size();i++) {
 			int status = thesisList.get(i).getStatus();
 			if(status == 1) {
-				thesisList.get(i).setStatusName("未审核");
+				thesisList.get(i).setStatusName("Wait");
 			}else if(status == 2) {
-				thesisList.get(i).setStatusName("审核通过");
+				thesisList.get(i).setStatusName("Pass");
 			}else {
-				thesisList.get(i).setStatusName("未通过");
+				thesisList.get(i).setStatusName("Fail");
 			}
 		}
 		

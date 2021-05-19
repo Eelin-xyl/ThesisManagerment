@@ -17,11 +17,9 @@
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<!-- <h4>审核课题</h4> -->
 				<ul class="list-inline">
-					<li>Topic Management</li>
-					<li>/</li>
-					<li>Topic Review</li>
+					<li>Topic Management  /  Topic Review</li>
+
 				</ul>
 				<table class="table table-responsive">
 					<thead>
