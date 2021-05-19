@@ -28,7 +28,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="firstname" class="col-sm-2 control-label">Topic Description:</label>
+						<label for="firstname" class="col-sm-2 control-label">Description:</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="thesisDesc" name="thesisDesc" value="${thesisTitleDesc }" >
 						</div>

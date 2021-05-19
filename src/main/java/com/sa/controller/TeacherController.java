@@ -149,11 +149,11 @@ public class TeacherController {
 				students.get(i).setStudentOpeningName(fileName);
 				int completion = STBO.getCompletion();
 				if(completion==0) {
-					students.get(i).setCompletionName("未审核");
+					students.get(i).setCompletionName("Unreviewed");
 				}else if(completion==1) {
-					students.get(i).setCompletionName("未通过");
+					students.get(i).setCompletionName("Fail");
 				}else {
-					students.get(i).setCompletionName("审核通过");;
+					students.get(i).setCompletionName("Pass");;
 				}
 			}
 		}
@@ -352,11 +352,11 @@ public class TeacherController {
 		thesisDesc = new String(thesisDesc.getBytes("iso-8859-1"),"utf-8");
 		
 		if(thesisTitle == null || "".equals(thesisTitle)) {
-			model.addAttribute("message", "上传课题题目不能为空");
-			return "teacher/main.jsp";
+			model.addAttribute("message", "Please write thesis topic.");
+			return "teacher/teacherUploadThesisTitle.jsp";
 		}else if(thesisDesc == null || "".equals(thesisDesc)) {
-			model.addAttribute("message", "上传课题描述不能为空");
-			return "teacher/main.jsp";
+			model.addAttribute("message", "Please write some description.");
+			return "teacher/teacherUploadThesisTitle.jsp";
 		}else {
 			Teacher currentTeacher = (Teacher)request.getSession().getAttribute("teacher");
 			int teacherId = currentTeacher.getId();
@@ -373,7 +373,7 @@ public class TeacherController {
 			int num = teacherService.uploadThesisTitle(thesis);
 			System.out.println("添加的课题数："+num);
 			
-			model.addAttribute("message", "上传成功");
+			model.addAttribute("message", "Upload successfully.");
 			return "teacher/teacherUploadThesisTitle.jsp";
 		}
 		
@@ -388,11 +388,11 @@ public class TeacherController {
 		for(int i=0;i<thesisList.size();i++) {
 			int status = thesisList.get(i).getStatus();
 			if(status == 1) {
-				thesisList.get(i).setStatusName("未审核");
+				thesisList.get(i).setStatusName("Unreviewed");
 			}else if(status == 2) {
-				thesisList.get(i).setStatusName("审核通过");
+				thesisList.get(i).setStatusName("Pass");
 			}else {
-				thesisList.get(i).setStatusName("未通过");
+				thesisList.get(i).setStatusName("Fail");
 			}
 		}
 		
@@ -406,7 +406,7 @@ public class TeacherController {
 	public String teacherModifyThesisTitleFrom(Model model,HttpServletRequest request,int id) {
 		ThesisTitle thesisTitle = teacherService.getThesisById(id);
 		if(thesisTitle.getStatus()== 2) {
-			model.addAttribute("thesisMessage", "该课题已经审核通过，不可更改");
+			model.addAttribute("thesisMessage", "This topic has passed and cannot be changed.");
 			teacherThesisResultForm(model, request);
 			return "teacher/teacherThesisResult.jsp";
 		}else {
@@ -450,7 +450,7 @@ public class TeacherController {
 		ThesisTitle thesisTitle = teacherService.getThesisById(id);
 		
 		if(thesisTitle.getStatus()== 2) {
-			model.addAttribute("thesisMessage", "该课题已经审核通过，不可删除");
+			model.addAttribute("thesisMessage", "This topic has passed and cannot be deleted.");
 			teacherThesisResultForm(model, request);
 			return "teacher/teacherThesisResult.jsp";
 		}else {
@@ -486,7 +486,7 @@ public class TeacherController {
 		
 		// System.out.println("上传课题id:"+topic4Teacher);
 		if(topic4Teacher == 0) {
-			model.addAttribute("message", "上传任务书出错");
+			model.addAttribute("message", "Failed to upload assignment.");
 			return "teacher/main.jsp";
 		}else {
 			Teacher currentTeacher = (Teacher)request.getSession().getAttribute("teacher");
@@ -516,10 +516,10 @@ public class TeacherController {
 				teacherTaskBookOpening.setThesisTitleId(topic4Teacher);
 				int num = teacherService.uploadTaskBook(teacherTaskBookOpening);
 				System.out.println("添加了"+num+"条信息，是课题id为 "+topic4Teacher+"的任务书");
-				model.addAttribute("message", "成功上传任务书");
+				model.addAttribute("message", "Upload assignment successfully.");
 				return "teacher/main.jsp";
 			}else {
-				model.addAttribute("message", "上传任务书出错");
+				model.addAttribute("message", "Failed to upload assignment.");
 				return "teacher/main.jsp";
 			}
 			

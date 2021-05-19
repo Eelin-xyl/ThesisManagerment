@@ -121,7 +121,7 @@ public class StudentController {
 		if(topic == null || "".equals(topic)) {
 			return "student/studentThesis.jsp";
 		}else {
-			model.addAttribute("topicMessage", "你已选择课题，不可多选");
+			model.addAttribute("topicMessage", "You can only choose a topic once.");
 			
 			return "student/main.jsp";
 		}
@@ -138,7 +138,7 @@ public class StudentController {
 		int studentId = student.getId();
 		Topic topic = studentService.chosenThesisTitle(studentId);
 		if(topic == null || "".equals(topic)) {
-			model.addAttribute("topicMessage", "还未选择课题");
+			model.addAttribute("topicMessage", "Please select a topic first.");
 			model.addAttribute("realTimeTopicMessage", realTimeTopicMessageOn);
 			
 			return "student/main.jsp";
@@ -163,7 +163,7 @@ public class StudentController {
 		int studentId = currentUser.getId();
 		Topic topic = studentService.chosenThesisTitle(studentId);
 		if(topic == null || "".equals(topic)) {
-			model.addAttribute("message", "尚未选择课题");
+			model.addAttribute("message", "Please select a topic first.");
 			return "student/studentViewTaskBookAndOpening.jsp";
 		}else {
 			int thesisId = topic.getThesisId();
@@ -453,7 +453,7 @@ public class StudentController {
 		
 		Topic topic = studentService.chosenThesisTitle(studentId);
 		if(topic == null || "".equals(topic)) {
-			model.addAttribute("message", "无法上传开题报告");
+			model.addAttribute("message", "can not upload file.");
 			return "student/main.jsp";
 		}else {
 			if(!file.isEmpty()) {
@@ -473,10 +473,10 @@ public class StudentController {
 				int num = studentService.uploadOpening(studentId, filePath.toString());
 				System.out.println("添加了"+num+"条信息");
 				
-				model.addAttribute("message", "上传开题报告成功");
+				model.addAttribute("message", "Upload successfully");
 				return "student/main.jsp";
 			}else {
-				model.addAttribute("message", "上传开题报告出错");
+				model.addAttribute("message", "Fail to upload.");
 				return "student/main.jsp";
 			}
 		}
@@ -541,16 +541,16 @@ public class StudentController {
 		int studentId = currentUser.getId();
 		StudentTaskBookOpening STBO = studentService.getSTBOInfoById(studentId);
 		if(STBO == null || "".equals(STBO)) {
-			model.addAttribute("message", "尚未提交开题报告");
+			model.addAttribute("message", "The proposal has not yet been submitted.");
 			return "student/studentOpeningResult.jsp";
 		}else {
 			int completion = STBO.getCompletion();
 			if(completion == 0) {
-				model.addAttribute("message", "你的开题报告还未审核，请耐心等待");
+				model.addAttribute("message", "Your proposal has not been reviewed.");
 			}else if(completion == 1) {
-				model.addAttribute("message", "你的开题报告未通过，请修改后重新提交");
+				model.addAttribute("message", "Your proposal failed, please submit after modification.");
 			}else {
-				model.addAttribute("message", "开题报告已通过");
+				model.addAttribute("message", "Your proposal has passed.");
 			}
 		}
 		return "student/studentOpeningResult.jsp";
@@ -576,13 +576,13 @@ public class StudentController {
 		
 		Topic topic = studentService.chosenThesisTitle(studentId);
 		if(topic == null || "".equals(topic)) {
-			model.addAttribute("message", "无法上传毕业论文");
+			model.addAttribute("message", "You can not upload thesis.");
 			return "student/main.jsp";
 		}else {
 			
 			StudentTaskBookOpening stbo  = studentService.getSTBOInfoById(studentId);
 			if(stbo == null || "".equals(stbo)) {
-				model.addAttribute("message", "开题报告还未上传或还未审核，无法上传");
+				model.addAttribute("message", "Your proposal has not been reviewed or uploaded.");
 				return "student/main.jsp";
 			}else {
 				int completion = stbo.getCompletion();
@@ -604,16 +604,16 @@ public class StudentController {
 						int num = studentService.uploadThesisInformation(studentId, filePath.toString());
 						System.out.println("添加了"+num+"条信息");
 						
-						model.addAttribute("message", "上传论文成功");
+						model.addAttribute("message", "Upload thesis successfully.");
 						return "student/main.jsp";
 					}else {
-						model.addAttribute("message", "上传论文出错");
+						model.addAttribute("message", "Fail to upload thesis.");
 						return "student/main.jsp";
 					}
 					
 				}else {
 					
-					model.addAttribute("message", "开题报告还未上传或还未审核，无法上传");
+					model.addAttribute("message", "Your proposal has not been reviewed or uploaded.");
 					return "student/main.jsp";
 					}
 				}

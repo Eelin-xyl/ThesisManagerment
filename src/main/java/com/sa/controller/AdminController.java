@@ -87,7 +87,7 @@ public class AdminController {
 		for(int i=0;i<thesisList.size();i++) {
 			int status = thesisList.get(i).getStatus();
 			if(status == 1) {
-				thesisList.get(i).setStatusName("Wait");
+				thesisList.get(i).setStatusName("Unreviewed");
 			}else if(status == 2) {
 				thesisList.get(i).setStatusName("Pass");
 			}else {
