@@ -166,7 +166,7 @@ public class AdminController {
 		int num = teacherService.deleteTeacher(id);
 		// System.out.println("删除了"+num+"条数据！");
 //		model.addAttribute("message", "成功删除一条教师信息");
-		msg = "成功删除一条教师信息";
+		msg = "Delete teacher information successfully";
 		return "redirect:/admin/showAllTeacher";
 	}
 	
@@ -225,7 +225,7 @@ public class AdminController {
 		int num = teacherService.updateTeacher(teacher);
 		System.out.println("修改数目："+num);
 //		model.addAttribute("message", "成功修改一条教师信息");
-		msg = "成功修改一条教师信息";
+		msg = "Modify teacher information successfully";
 		return "redirect:/admin/showAllTeacher";
 	}
 	
@@ -424,7 +424,7 @@ public class AdminController {
 		int num = studentService.updateStudent(student);
 		
 		System.out.println("修改数目："+num);
-		msg = "成功修改一条学生信息";
+		msg = "Modify student information successfully";
 		return "redirect:/admin/showAllStudent";
 	}
 	
@@ -434,7 +434,7 @@ public class AdminController {
 		int num = studentService.deleteStudent(id);
 		//System.out.println("删除了"+num+"条数据！");
 //		model.addAttribute("message", "成功删除一条学生信息");
-		msg = "成功删除一条学生信息";
+		msg = "Delete student information successfully";
 		return "redirect:/admin/showAllStudent";
 	}
 	

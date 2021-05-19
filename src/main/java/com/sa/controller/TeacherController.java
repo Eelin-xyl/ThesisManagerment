@@ -186,11 +186,11 @@ public class TeacherController {
 			
 			int status= teacherProgressList.get(i).getState();
 			if(status == 0) {
-				teacherProgressList.get(i).setStateName("还未查看");
+				teacherProgressList.get(i).setStateName("Unreviewed");
 			}else if(status == 1) {
-				teacherProgressList.get(i).setStateName("不通过");
+				teacherProgressList.get(i).setStateName("Fail");
 			}else {
-				teacherProgressList.get(i).setStateName("通过");
+				teacherProgressList.get(i).setStateName("Pass");
 			}
 				
 			
@@ -243,11 +243,11 @@ public class TeacherController {
 				}else {
 					int status = thesisInfo.getStatus();
 					if(status==0){
-						students.get(i).setCompletionName("未查看");
+						students.get(i).setCompletionName("Unreviewed");
 					}else if(status == 1) {
-						students.get(i).setCompletionName("未通过");
+						students.get(i).setCompletionName("Fail");
 					}else {
-						students.get(i).setCompletionName("通过");
+						students.get(i).setCompletionName("Pass");
 					}
 					String filePath = thesisInfo.getThesisText();
 					String[] str = filePath.split("\\\\");
@@ -708,7 +708,7 @@ public class TeacherController {
 		
 		int num = teacherService.addTeacherProgress(teacherProgress);
 		System.out.println("添加任务通知"+num+"条");
-		model.addAttribute("message", "成功给学生添加任务通知");
+		model.addAttribute("message", "Publish notification successfully");
 		return "teacher/main.jsp";
 	}
 	
@@ -784,11 +784,11 @@ public class TeacherController {
 			
 			int num = teacherService.addStudentScore(studentScore);
 			System.out.println("添加"+num+"条学生成绩");
-			model.addAttribute("message", "添加一条学生成绩");
+			model.addAttribute("message", "Add successfully");
 			
 			return "teacher/main.jsp";
 		}else {
-			model.addAttribute("message", "该学生已经添加过成绩");
+			model.addAttribute("message", "This student has added score");
 			return "teacher/main.jsp";
 		}
 		
@@ -817,7 +817,7 @@ public class TeacherController {
 		score.setInputMan(teacherName);
 		teacherService.modifyStudentScore(score);
 		
-		model.addAttribute("message", "修改成功");
+		model.addAttribute("message", "Modify score successfully");
 		
 		return "teacher/main.jsp";
 	}

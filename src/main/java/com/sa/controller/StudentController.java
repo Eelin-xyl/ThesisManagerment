@@ -530,7 +530,7 @@ public class StudentController {
 			System.out.println("成功删除开题报告");
 		}
 		
-		model.addAttribute("message", "成功删除一个文档");
+		model.addAttribute("message", "Delete successfully.");
 	
 		return "student/main.jsp";
 	}
