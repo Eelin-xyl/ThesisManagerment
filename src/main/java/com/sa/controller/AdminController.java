@@ -117,8 +117,8 @@ public class AdminController {
 		department = new String(department.getBytes("iso-8859-1"),"utf-8");
 		
 		if(teacherNo == null || "".equals(teacherNo) || teacherName == null || "".equals(teacherName)|| sex == null || "".equals(sex) || phone == null || "".equals(phone) || department == null || "".equals(department)  ) {
-			model.addAttribute("message", "存在未填写的信息");
-			return "admin/main.jsp";
+			model.addAttribute("message", "Please complete information.");
+			return "admin/adminTeacherAdd.jsp";
 		}else {
 			Date currentTime = new Date();
 			
@@ -133,7 +133,7 @@ public class AdminController {
 			
 			int addNum = teacherService.addTeacher(teacher);
 			// System.out.println("添加数目："+addNum);
-			model.addAttribute("message", "成功添加一条教师信息");
+			model.addAttribute("message", "Add teacher information.");
 			return "admin/adminTeacherAdd.jsp";
 		}
 		
