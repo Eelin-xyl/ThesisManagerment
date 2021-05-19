@@ -133,7 +133,7 @@ public class AdminController {
 			
 			int addNum = teacherService.addTeacher(teacher);
 			// System.out.println("添加数目："+addNum);
-			model.addAttribute("message", "Add teacher information.");
+			model.addAttribute("message", "Add teacher information successfully.");
 			return "admin/adminTeacherAdd.jsp";
 		}
 		
@@ -183,6 +183,7 @@ public class AdminController {
 		model.addAttribute("departmentName", departmentName);
 		model.addAttribute("sex", sex);
 		model.addAttribute("phone", phone);
+
 		return "admin/adminTeacherModify.jsp";
 	}
 	
@@ -231,7 +232,7 @@ public class AdminController {
 		}else if((!"".equals(teacherNo) || teacherNo != null) &&("".equals(teacherName) || teacherName == null) ) {
 			List<Teacher> teachers = teacherService.showTeacherOne1(teacherNo);
 			if(teachers.isEmpty()) {
-				model.addAttribute("showMessage", "没有与查询相匹配的教师信息");
+				model.addAttribute("showMessage", "This teacher does not exist");
 			}else {
 				for(int i=0;i<teachers.size();i++) {
 					
@@ -248,7 +249,7 @@ public class AdminController {
 			teacherName = new String(teacherName.getBytes("iso-8859-1"),"utf-8");
 			List<Teacher> teachers = teacherService.showTeacherOne2(teacherName);
 			if(teachers.isEmpty()) {
-				model.addAttribute("showMessage", "没有与查询相匹配的教师信息");
+				model.addAttribute("showMessage", "This teacher does not exist");
 			}else {
 				for(int i=0;i<teachers.size();i++) {
 					System.out.println(teachers.get(i));
@@ -265,7 +266,7 @@ public class AdminController {
 			teacherNo = new String(teacherNo.getBytes("iso-8859-1"),"utf-8");
 			List<Teacher> teachers = teacherService.showTeacherOne3(teacherNo, teacherName);
 			if(teachers.isEmpty()) {
-				model.addAttribute("showMessage", "没有与查询相匹配的教师信息");
+				model.addAttribute("showMessage", "This teacher does not exist");
 			}else {
 				for(int i=0;i<teachers.size();i++) {
 					System.out.println(teachers.get(i));
@@ -298,8 +299,8 @@ public class AdminController {
 		phone = new String(phone.getBytes("iso-8859-1"),"utf-8");
 		major = new String(major.getBytes("iso-8859-1"),"utf-8");
 		if(studentNo== null || "".equals(studentNo)||studentName == null || "".equals(studentName) || sex==null ||"".equals(sex) || grade == null || "".equals(grade) || phone == null || "".equals(phone) || major==null ||"".equals(major)) {
-			model.addAttribute("message", "存在未填写的信息");
-			return "admin/main.jsp";
+			model.addAttribute("message", "Please complete information.");
+			return "admin/adminStudentAdd.jsp";
 			
 		}else {
 			Date currentTime = new Date();
@@ -317,7 +318,7 @@ public class AdminController {
 			int addNum = studentService.addStudent(student);
 			// System.out.println("添加数目："+addNum);
 			
-			model.addAttribute("message", "成功添加一条学生信息");
+			model.addAttribute("message", "Add student information successfully.");
 			
 			return "admin/adminStudentAdd.jsp";
 		}
@@ -436,7 +437,7 @@ public class AdminController {
 		}else if((!"".equals(studentNo) || studentNo != null) &&("".equals(studentName) || studentName == null) ) {
 			List<Student> students = studentService.showStudentOne1(studentNo);
 			if(students.isEmpty()) {
-				model.addAttribute("showMessage", "没有与查询相匹配的学生信息");
+				model.addAttribute("showMessage", "This student does not exist.");
 			}else {
 				for(int i=0;i<students.size();i++) {
 					
@@ -452,7 +453,7 @@ public class AdminController {
 			studentName = new String(studentName.getBytes("iso-8859-1"),"utf-8");
 			List<Student> students = studentService.showStudentOne2(studentName);
 			if(students.isEmpty()) {
-				model.addAttribute("showMessage", "没有与查询相学生的教师信息");
+				model.addAttribute("showMessage", "This student does not exist.");
 			}else {
 				for(int i=0;i<students.size();i++) {
 					int mojarId = students.get(i).getMajorId();
@@ -468,7 +469,7 @@ public class AdminController {
 			studentNo = new String(studentNo.getBytes("iso-8859-1"),"utf-8");
 			List<Student> students = studentService.showStudentOne3(studentNo, studentName);
 			if(students.isEmpty()) {
-				model.addAttribute("showMessage", "没有与查询相匹配的学生信息");
+				model.addAttribute("showMessage", "This student does not exist.");
 			}else {
 				for(int i=0;i<students.size();i++) {
 					int mojarId = students.get(i).getMajorId();
