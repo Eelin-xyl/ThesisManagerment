@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sa.dao.ITopicDao">
+	<select id="showAllTopic" resultType="Topic">
+		select * from topic
+	</select>
+	
+	<select id="topicByStudentId" resultType="Topic">
+		select * from topic where studentId=#{studentId}
+	</select>
+	
+	<insert id="addTopic" parameterType="Topic">
+		insert topic values(null,#{thesisId},#{studentId},#{selectTime})
+	</insert>
+	
+	<delete id="deleteTopic" parameterType="int">
+		delete from topic where studentId=#{studentId}
+	</delete>
+	
+	<select id="getInfoByThesisId" resultType="Topic" parameterType="int">
+		select * from topic where thesisId=#{thesisId}
+	</select>
+</mapper>
