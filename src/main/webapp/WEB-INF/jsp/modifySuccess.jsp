@@ -19,7 +19,7 @@
 	    if(t==0){ 
 	        location="index.jsp"; //#设定跳转的链接地址 
 	    } 
-	    document.getElementById('show').innerHTML=" "+t+"秒后跳转到主页"; // 显示倒计时 
+	    document.getElementById('show').innerHTML=" After "+ t +" seconds will direct to HomePage"; // 显示倒计时 
 	    t--; // 计数器递减 
 	    //本文转自： 
 	} 
@@ -29,7 +29,7 @@
 <body>
 	<br> <br><br> <br>
 	<div align="center">
-		<font color="blue" size="5px">Modify Successfully</font>
+		<font color="blue" size="5px">Modify Successfully! </font>
 		<font id="show" color="blue" size="5px"></font>
 		<br>
 		<a href="index.jsp">Click here...</a>
