@@ -60,7 +60,7 @@ public class StudentController {
 		return "student/addStudent.jsp";
 	}
 	
-	private String realTimeTopicMessageOn = "";
+//	private String realTimeTopicMessageOn = "";
 	
 	// 已废除
 	@RequestMapping(value="/add",method=RequestMethod.POST)
@@ -139,7 +139,7 @@ public class StudentController {
 		Topic topic = studentService.chosenThesisTitle(studentId);
 		if(topic == null || "".equals(topic)) {
 			model.addAttribute("topicMessage", "Please select a topic first.");
-			model.addAttribute("realTimeTopicMessage", realTimeTopicMessageOn);
+//			model.addAttribute("realTimeTopicMessage", realTimeTopicMessageOn);
 			
 			return "student/main.jsp";
 		}else {
@@ -150,7 +150,7 @@ public class StudentController {
 			
 			model.addAttribute("topicName", topicName);
 			
-			model.addAttribute("realTimeTopicMessage", realTimeTopicMessageOn);
+//			model.addAttribute("realTimeTopicMessage", realTimeTopicMessageOn);
 			
 			return "student/studentThesisResult.jsp";
 		}
@@ -375,8 +375,8 @@ public class StudentController {
 		
 		String infoMessage = sb.toString();
 		
-		this.realTimeTopicMessageOn = infoMessage;
-		model.addAttribute("realTimeTopicMessage", realTimeTopicMessageOn);
+//		this.realTimeTopicMessageOn = infoMessage;
+//		model.addAttribute("realTimeTopicMessage", realTimeTopicMessageOn);
 		
 		studentThesisResult(response, request, model);
 		return "student/studentThesisResult.jsp";
@@ -556,15 +556,15 @@ public class StudentController {
 		return "student/studentOpeningResult.jsp";
 	}
 	
-	@RequestMapping(value="/getRealTimeTopic")
-	public void getRealTimeTopic(HttpServletResponse response,HttpServletRequest request) throws Exception {
-		String message = (String)request.getSession().getServletContext().getAttribute("realTimeTopicMessage");
-		JSONObject jsObject = JSONObject.fromObject(message);
-		response.setContentType("text/html;charset=UTF-8");
-		PrintWriter write = response.getWriter();
-		write.write(jsObject.toString());
-		write.close();
-	}
+//	@RequestMapping(value="/getRealTimeTopic")
+//	public void getRealTimeTopic(HttpServletResponse response,HttpServletRequest request) throws Exception {
+////		String message = (String)request.getSession().getServletContext().getAttribute("realTimeTopicMessage");
+////		JSONObject jsObject = JSONObject.fromObject(message);
+//		response.setContentType("text/html;charset=UTF-8");
+//		PrintWriter write = response.getWriter();
+//		write.write(jsObject.toString());
+//		write.close();
+//	}
 	
 	@RequestMapping(value="/uploadThesisInformation")
 	public String studentUploadThesisInformation(HttpServletRequest request, Model model,@RequestParam("file") MultipartFile file) throws Exception {

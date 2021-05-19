@@ -8,8 +8,8 @@
 <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <% 
-	String ss = (String)request.getAttribute("realTimeTopicMessage"); 
-	application.setAttribute("realMessage", ss);
+// 	String ss = (String)request.getAttribute("realTimeTopicMessage"); 
+// 	application.setAttribute("realMessage", ss);
 %>
 <body>
 	<div class="container">

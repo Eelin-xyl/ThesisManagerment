@@ -121,12 +121,12 @@
 		<!-- /.container-fluid --> </nav>
 	</div>
 
-	<div class="container" align="right">
+<!-- 	<div class="container" align="right"> -->
 		
-		<font size="4px">实时选课信息</font><br>
-		<p><font color="blue" size="3px">${realMessage }</font></p>
+<!-- 		<font size="4px">实时选课信息</font><br> -->
+<%-- 		<p><font color="blue" size="3px">${realMessage }</font></p> --%>
 		
-	</div>
+<!-- 	</div> -->
 
 	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

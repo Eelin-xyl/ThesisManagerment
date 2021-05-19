@@ -10,7 +10,7 @@ function showInfoOld() {
 	
 	var shoInfo = document.getElementById("realTimeMessage");
 	//var message = <%=(String) application.getAttribute("sb")%>;
-	var message= '<%=application.getAttribute("realTimeTopicMessage")%>' ;  
+//	var message= '<%=application.getAttribute("realTimeTopicMessage")%>' ;  
 	//var message = "<% =(String) application.getAttribute("realTimeTopicMessage")%>";
 	if(message == null ||message==""){
 		message = "";
