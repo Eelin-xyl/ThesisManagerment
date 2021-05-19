@@ -27,13 +27,13 @@
 				<table class="table">
 					<tr>
 						<td>Progress Notification Description</td>
-						<td>Status</td>
+						<td>Time</td>
 					</tr>
 
 					<c:forEach items="${progressList }" var="progress">
 						<tr>
 							<td>${progress.context }</td>
-							<td>${progress.stateName }</td>
+							<td>${progress.inputTime }</td>
 						</tr>
 					</c:forEach>
 				</table>
