@@ -26,7 +26,8 @@
 					<li>Search Student</li>
 				</ul>
 				
-				<br></br>
+				<p><font color="red" size="6px">${message }</font></p>
+									
 				<form role="form" class="form-horizontal" action="${pageContext.request.contextPath}/admin/showStudentOne" method="post">
 					<div class="row">
 						<div class="col-md-3">
@@ -51,8 +52,6 @@
 								
 									<button type="submit" class="btn btn-primary">Search</button>
 									<button type="submit" id="showButton" name="showButton" class="btn btn-primary">All Students</button>							
-									
-									<p><font color="red" size="2px">${showMessage }</font></p>
 
 								</div>
 							</div>
