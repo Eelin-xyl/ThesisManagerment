@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Add Score</title>
+<title>Thesis Score</title>
 </head>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/student4Pass.js"></script>
 <body>
@@ -16,11 +16,8 @@
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<!-- <h4>添加成绩</h4> -->
 				<ul class="list-inline">
-					<li>Thesis Score</li>
-					<li>/</li>
-					<li>Add Score</li>
+					<li>Thesis Score	/	Score Add</li>
 				</ul>
 				<p><font color="red" size="4px">${message }</font> </p>
 				<form role="form" class="form-horizontal" action="${pageContext.request.contextPath}/teacher/addStudentScore" method="post">

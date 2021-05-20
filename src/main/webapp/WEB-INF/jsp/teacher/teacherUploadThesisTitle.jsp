@@ -17,7 +17,7 @@
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
 				<ul class="list-inline">
-					<li>Topic Management	/	Upload Topic</li>
+					<li>Topic Management	/	Topic Upload</li>
 				</ul>
 				<p><font color="red" size="4px">${message }</font> </p>
 				<form action="${pageContext.request.contextPath}/teacher/uploadThesisTitle" method="post">

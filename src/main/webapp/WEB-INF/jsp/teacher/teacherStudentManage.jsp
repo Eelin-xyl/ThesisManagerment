@@ -17,11 +17,8 @@
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<!-- <h4>管理的学生</h4> -->
 				<ul class="list-inline">
-					<li>Student List</li>
-					<li>/</li>
-					<li>Student Information Review</li>
+					<li>Student List	/	Student Information Review</li>
 				</ul>
 				<table class="table table-bordered">
 					<thead>

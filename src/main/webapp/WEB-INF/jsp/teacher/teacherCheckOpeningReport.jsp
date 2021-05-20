@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Audit Opening Report</title>
+<title>Schedule Management</title>
 <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -17,11 +17,8 @@
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<!-- <h4>审核开题报告</h4> -->
 				<ul class="list-inline">
-					<li>Schedule Management</li>
-					<li>/</li>
-					<li>Audit Opening Report</li>
+					<li>Schedule Management    /	Audit Opening Report</li>
 				</ul>
 				<table class="table table-bordered">
 					<thead>

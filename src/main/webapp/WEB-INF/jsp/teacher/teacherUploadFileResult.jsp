@@ -17,11 +17,8 @@
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-			<!-- <h4>查看已上传文档</h4> -->
 			<ul class="list-inline">
-					<li>File Management</li>
-					<li>/</li>
-					<li>Uploaded File</li>
+					<li>File Management    /	File Review</li>
 				</ul>
 
 				<table class="table">

@@ -17,11 +17,8 @@
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<!-- <h4>成绩管理</h4> -->
 				<ul class="list-inline">
-					<li>Thesis Score</li>
-					<li>/</li>
-					<li>Score Review</li>
+					<li>Thesis Score	/	Score Review</li>
 				</ul>
 				<table class="table">
 					<tr>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Modify Score</title>
+<title>Score Modify Score</title>
 <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -15,11 +15,8 @@
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<!-- <h4>修改学生</h4> -->
 				<ul class="list-inline">
-					<li>Thesis Score</li>
-					<li>/</li>
-					<li>Modify Score</li>
+					<li>Thesis Score	/	Score Modify</li>
 				</ul>
 				<form role="form" class="form-horizontal" action="${pageContext.request.contextPath}/teacher/modifyStudentScoreToDb" method="post">
 					<input type="hidden" name="id" id="id" value="${scoreList.studentId }"/>

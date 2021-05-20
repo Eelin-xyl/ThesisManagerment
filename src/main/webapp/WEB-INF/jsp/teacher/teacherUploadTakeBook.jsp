@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Issue Assignment</title>
+<title>Schedule Management</title>
 <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/topicManage4Teacher.js"></script>
 </head>
@@ -17,11 +17,8 @@
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<!-- <h4>发布任务书</h4> -->
 				<ul class="list-inline">
-					<li>Schedule Management</li>
-					<li>/</li>
-					<li>Issue Assignment</li>
+					<li>Schedule Management    /	Issue Assignment</li>
 				</ul>
 				<form role="form" class="form-horizontal" action="${pageContext.request.contextPath}/teacher/uploadTaskBook" method="post" enctype="multipart/form-data" >
 					<div class="col-md-4">
