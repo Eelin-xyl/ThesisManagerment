@@ -20,12 +20,12 @@
                     document.getElementById('message').style.display = 'none';
                 }, 1500);
             </script>
-            
-            
+
+
             <div class="container">
-            <a href="${pageContext.request.contextPath}/quit">
-                <img src="assets/images/logo.png" width="30%" height="30%" />
-			</a>
+                <a href="${pageContext.request.contextPath}/quit">
+                    <img src="assets/images/logo.png" width="30%" height="30%" />
+                </a>
                 <br></br>
                 <div class="form-bottom">
                     <form class="login-form" action="${pageContext.request.contextPath}/login/login" method="post">

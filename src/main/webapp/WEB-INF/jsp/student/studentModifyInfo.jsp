@@ -37,8 +37,8 @@
 						<div class="col-sm-10">
 							<select class="form-control" id="sex" name="sex">
 								<option value="${sessionScope.student.sex }">${sessionScope.student.sex }</option>
-								<option value="男">Male</option>
-								<option value="女">Female</option>
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
 							</select>
 						</div>
 					</div>
