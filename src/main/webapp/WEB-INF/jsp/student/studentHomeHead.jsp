@@ -37,7 +37,7 @@
 								<a href="${pageContext.request.contextPath}/student/modifyInfo">Modify Information</a>
 							</li>
 							<li>
-								<a href="${pageContext.request.contextPath}/student/modifyPassword">Password Change</a>
+								<a href="${pageContext.request.contextPath}/student/modifyPassword">Modify Password</a>
 							</li>
 						</ul>
 					</li>
@@ -80,10 +80,10 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">File Management</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="${pageContext.request.contextPath}/student/uploadFile">Upload File</a>
+								<a href="${pageContext.request.contextPath}/student/uploadFile">File Upload</a>
 							</li>
 							<li>
-								<a href="${pageContext.request.contextPath}/student/resourcesDownload">Uploaded File</a>
+								<a href="${pageContext.request.contextPath}/student/resourcesDownload">File Review</a>
 							</li>
 						</ul>
 					</li>
@@ -95,7 +95,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Score Management</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="${pageContext.request.contextPath}/student/score">Check Score</a>
+								<a href="${pageContext.request.contextPath}/student/score">Score Check</a>
 							</li>
 						</ul>
 					</li>

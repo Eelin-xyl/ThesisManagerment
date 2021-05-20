@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Modify Information</title>
+<title>Student Information Management</title>
 <!-- <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/majorManage.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/verifyPhone.js"></script>
@@ -18,11 +18,8 @@
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<!-- <h4>修改信息</h4> -->
 				<ul class="list-inline">
-					<li>Student Information Management</li>
-					<li>/</li>
-					<li>Modify Information</li>
+					<li>Student Information Management	/	Modify Information</li>
 				</ul>
 				<form role="form" class="form-horizontal" action="${pageContext.request.contextPath}/student/modifyInfoToDb" method="post">
 					<input type="hidden" name="id" id="id" value="${sessionScope.student.id }" />
