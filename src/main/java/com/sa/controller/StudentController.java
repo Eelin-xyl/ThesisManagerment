@@ -265,7 +265,7 @@ public class StudentController {
 		int studentId = currentUser.getId();
 		StudentScore dbScore = teacherService.showInfoByStudentId(studentId);
 		if(dbScore == null || "".equals(dbScore)) {
-			model.addAttribute("message", "暂无成绩");
+			model.addAttribute("message", "You have no score yet.");
 			return "student/main.jsp";
 			
 		}else {

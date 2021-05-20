@@ -287,7 +287,7 @@ public class TeacherController {
 			int studentId = student4pass.get(i).getId();
 			StudentScore studentScore = teacherService.showInfoByStudentId(studentId);
 			if(studentScore == null || "".equals(studentScore)) {
-				model.addAttribute("message", "尚未添加过学生成绩");
+				model.addAttribute("message", "You have not add any scores yet.");
 				return "teacher/teacherScore.jsp";
 			}else {
 				int thesisScore  = teacherService.showInfoByStudentId(studentId).getThesisResult();
