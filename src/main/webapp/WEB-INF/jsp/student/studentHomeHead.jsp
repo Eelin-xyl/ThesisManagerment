@@ -115,10 +115,10 @@
                             </li>
                         </ul>
 
-                        <ul class="nav navbar-nav">
+                        <ul class="nav navbar-nav navbar-right"">
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" style="color: red">
-									Current User : ${sessionScope.student.studentName }
+									Current User : &nbsp; ${sessionScope.student.studentName }
 								</a>
                                 <ul class="dropdown-menu">
                                     <li>

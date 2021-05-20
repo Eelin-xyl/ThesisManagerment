@@ -79,11 +79,11 @@
 					</li>
 				</ul>
 				
-				<ul class="nav navbar-nav">
+				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" style="color: red">
-							Current User : ${sessionScope.currentUser.userNo }
-						</a>
+							Current User : &nbsp; ${sessionScope.currentUser.userNo }
+						</a>					
 						<ul class="dropdown-menu">
 							<li>
 								<a href="${pageContext.request.contextPath}/quit">Exit</a>

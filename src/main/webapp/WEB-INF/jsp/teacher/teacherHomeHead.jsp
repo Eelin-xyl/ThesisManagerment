@@ -120,10 +120,10 @@
 					</li>
 				</ul>
 				
-				<ul class="nav navbar-nav">
+				<ul class="nav navbar-nav navbar-right"">
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" style="color: red">
-							Current User : ${sessionScope.teacher.teacherName }
+							Current User : &nbsp; ${sessionScope.teacher.teacherName }
 						</a>
 						<ul class="dropdown-menu">
 							<li>
