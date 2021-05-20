@@ -34,15 +34,15 @@
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Information
-									Management</a>
+                                    Management</a>
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="${pageContext.request.contextPath}/student/modifyInfo">Modify
-											Information</a>
+                                            Information</a>
                                     </li>
                                     <li>
                                         <a href="${pageContext.request.contextPath}/student/modifyPassword">Modify
-											Password</a>
+                                            Password</a>
                                     </li>
                                 </ul>
                             </li>
@@ -51,14 +51,14 @@
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Topic
-									Management</a>
+                                    Management</a>
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="${pageContext.request.contextPath}/student/thesis">Topic Selection</a>
                                     </li>
                                     <li>
                                         <a href="${pageContext.request.contextPath}/student/thesisResult">Topic
-											Result</a>
+                                            Result</a>
                                     </li>
                                 </ul>
                             </li>
@@ -67,20 +67,20 @@
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Schedule
-									Management</a>
+                                    Management</a>
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="${pageContext.request.contextPath}/student/viewTaskOpening">Assignment
-											Download</a>
+                                            Download</a>
                                     </li>
                                     <li>
                                         <a href="${pageContext.request.contextPath}/student/openingResult">Opening
-											Report</a>
+                                            Report</a>
                                     </li>
 
                                     <li>
                                         <a href="${pageContext.request.contextPath}/student/sectionTask">Progress
-											Notification</a>
+                                            Notification</a>
                                     </li>
                                 </ul>
                             </li>
@@ -89,14 +89,14 @@
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">File
-									Management</a>
+                                    Management</a>
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="${pageContext.request.contextPath}/student/uploadFile">File Upload</a>
                                     </li>
                                     <li>
                                         <a href="${pageContext.request.contextPath}/student/resourcesDownload">File
-											Review</a>
+                                            Review</a>
                                     </li>
                                 </ul>
                             </li>
@@ -106,7 +106,7 @@
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Score
-									Management</a>
+                                    Management</a>
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="${pageContext.request.contextPath}/student/score">Score Check</a>
@@ -115,16 +115,16 @@
                             </li>
                         </ul>
 
-                        <ul class="nav navbar-nav navbar-right"">
-                            <li class="dropdown">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class=" dropdown ">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" style="color: red">
-									Current User : &nbsp; ${sessionScope.student.studentName }
-								</a>
+                                    Current User : &nbsp; ${sessionScope.student.studentName }
+                                </a>
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="${pageContext.request.contextPath}/student/main">
-											Personal Information
-										</a>
+                                            Personal Information
+                                        </a>
                                     </li>
                                     <li><a href="${pageContext.request.contextPath}/quit">Exit</a></li>
                                 </ul>
@@ -137,17 +137,8 @@
             </nav>
         </div>
 
-        <!-- 	<div class="container" align="right"> -->
-
-        <!-- 		<font size="4px">实时选课信息</font><br> -->
-        <%-- <p>
-			<font color="blue" size="3px">${realMessage }</font>
-			</p> --%>
-
-            <!-- 	</div> -->
-
-            <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-            <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src=" https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js "></script>
+        <script src=" https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
     </body>
 
     </html>
