@@ -238,7 +238,9 @@ public class AdminController {
 		}else if((!"".equals(teacherNo) || teacherNo != null) &&("".equals(teacherName) || teacherName == null) ) {
 			List<Teacher> teachers = teacherService.showTeacherOne1(teacherNo);
 			if(teachers.isEmpty()) {
-				model.addAttribute("message", "This teacher does not exist");
+//				model.addAttribute("message", "This teacher does not exist");
+				msg = "This teacher does not exist";
+				return "redirect:/admin/showAllTeacher";
 			}else {
 				for(int i=0;i<teachers.size();i++) {
 					
@@ -251,11 +253,14 @@ public class AdminController {
 			model.addAttribute("teacherList", teachers);
 			System.out.println("教师集合："+teachers);
 			return "admin/adminTeacherManage.jsp";
+			
 		}else if(("".equals(teacherNo) || teacherNo == null) && (!"".equals(teacherName) || teacherName != null)) {
 			teacherName = new String(teacherName.getBytes("iso-8859-1"),"utf-8");
 			List<Teacher> teachers = teacherService.showTeacherOne2(teacherName);
 			if(teachers.isEmpty()) {
-				model.addAttribute("message", "This teacher does not exist");
+//				model.addAttribute("message", "This teacher does not exist");
+				msg = "This teacher does not exist";
+				return "redirect:/admin/showAllTeacher";
 			}else {
 				for(int i=0;i<teachers.size();i++) {
 					System.out.println(teachers.get(i));
@@ -272,7 +277,9 @@ public class AdminController {
 			teacherNo = new String(teacherNo.getBytes("iso-8859-1"),"utf-8");
 			List<Teacher> teachers = teacherService.showTeacherOne3(teacherNo, teacherName);
 			if(teachers.isEmpty()) {
-				model.addAttribute("message", "This teacher does not exist");
+//				model.addAttribute("message", "This teacher does not exist");
+				msg = "This teacher does not exist";
+				return "redirect:/admin/showAllTeacher";
 			}else {
 				for(int i=0;i<teachers.size();i++) {
 					System.out.println(teachers.get(i));
