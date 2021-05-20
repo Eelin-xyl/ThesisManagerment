@@ -9,7 +9,7 @@
 
 <style>
 	body{        
-	    background-image: url(../images/stu.jpg);
+	    background-image: url(../images/bg.jpg);
 	   background-attachment: fixed;
 	}
 	

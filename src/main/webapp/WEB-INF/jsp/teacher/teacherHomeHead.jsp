@@ -8,7 +8,7 @@
 <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <style>
 	body{        
-	    background-image: url(../images/tea.jpg);
+	    background-image: url(../images/bg.jpg);
 	    background-attachment: fixed;
 	}
 	*{
@@ -69,18 +69,14 @@
 							<li>
 								<a href="${pageContext.request.contextPath}/teacher/uploadTaskBook">Issue Assignment</a>
 							</li>
-<!-- 							<li> -->
-<%-- 								<a href="${pageContext.request.contextPath}/teacher/uploadOpening">Issue Opening Report</a> --%>
-<!-- 							</li> -->
+
 							<li>
 								<a href="${pageContext.request.contextPath}/teacher/checkOppening">Audit Opening Report</a>
 							</li>
 							<li>
 								<a href="${pageContext.request.contextPath}/teacher/publishProgress">Publish Progress Notification</a>
 							</li>
-<!-- 							<li> -->
-<%-- 								<a href="${pageContext.request.contextPath}/teacher/checkProgress">Audit Phase Task</a> --%>
-<!-- 							</li> -->
+
 						</ul>
 					</li>
 				</ul>

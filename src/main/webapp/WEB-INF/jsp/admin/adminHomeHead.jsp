@@ -8,7 +8,7 @@
 <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <style>
 	body{        
-	    background-image: url(../images/adm.jpg);
+	    background-image: url(../images/bg.jpg);
 	   	background-attachment: fixed;
 	}
 	
