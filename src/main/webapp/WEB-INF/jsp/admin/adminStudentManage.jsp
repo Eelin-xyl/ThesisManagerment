@@ -19,11 +19,9 @@
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<!-- <h4>学生管理</h4> -->
+
 				<ul class="list-inline">
-					<li>Student Management</li>
-					<li>/</li>
-					<li>Search Student</li>
+					<li>Student Management	/	Student Search</li>
 				</ul>
 				
 				<p><font color="red" size="6px">${message }</font></p>

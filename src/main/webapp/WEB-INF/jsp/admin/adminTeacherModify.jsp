@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Modify Teacher Information</title>
+<title>Teacher Modify</title>
 <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/departmentManage.js"></script>
 </head>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Add Student</title>
+<title>Student Management</title>
 <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/majorManage.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/verifyPhone.js"></script>
@@ -18,12 +18,10 @@
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<!-- <h4>添加学生</h4> -->
 				<ul class="list-inline">
-					<li>Student Management</li>
-					<li>/</li>
-					<li>Add Student</li>
+					<li>Student Management	/	Student Add</li>
 				</ul>
+				
 				<p><font color="red" size="5px">${message }</font></p>
 				<form role="form" class="form-horizontal" action="${pageContext.request.contextPath}/admin/studentAdd" method="post">
 					<div class="form-group">

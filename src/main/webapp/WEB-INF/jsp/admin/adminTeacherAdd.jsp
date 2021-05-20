@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Add Teacher</title>
+<title>Teacher Management</title>
 <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/departmentManage.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/verifyPhone.js"></script>
@@ -20,9 +20,7 @@
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
 				<ul class="list-inline">
-					<li>Teacher Management</li>
-					<li>/</li>
-					<li>Add Teacher</li>
+					<li>Teacher Management	/	Teacher Add</li>
 				</ul>
 				<p><font color="red" size="5px">${message }</font></p>
 				<form role="form" class="form-horizontal" action="${pageContext.request.contextPath}/admin/teacherAdd" method="post">

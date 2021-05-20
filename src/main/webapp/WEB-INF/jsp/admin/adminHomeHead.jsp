@@ -45,10 +45,10 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Teacher Management</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="${pageContext.request.contextPath}/admin/teacherAdd">Add Teacher</a>
+								<a href="${pageContext.request.contextPath}/admin/teacherAdd">Teacher Add</a>
 							</li>
 							<li>
-								<a href="${pageContext.request.contextPath}/admin/showAllTeacher">Search Teacher</a>
+								<a href="${pageContext.request.contextPath}/admin/showAllTeacher">Teacher Search</a>
 							</li>
 						</ul>
 					</li>
@@ -59,10 +59,10 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Student Management</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="${pageContext.request.contextPath}/admin/studentAdd">Add Student</a>
+								<a href="${pageContext.request.contextPath}/admin/studentAdd">Student Add</a>
 							</li>
 							<li>
-								<a href="${pageContext.request.contextPath}/admin/showAllStudent">Search Student</a>							
+								<a href="${pageContext.request.contextPath}/admin/showAllStudent">Student Search</a>							
 							</li>
 						</ul>
 					</li>
@@ -83,7 +83,7 @@
 				<ul class="nav navbar-nav">
 					<li><a href="${pageContext.request.contextPath}/quit">Exit</a></li>
 				</ul>
-				<!-- 显示当前用户 -->
+
 				<ul class="nav navbar-nav navbar-right">
 					<p class="navbar-text" style="color: red">Current User : &nbsp;${sessionScope.currentUser.userNo }</p>
 				</ul>
