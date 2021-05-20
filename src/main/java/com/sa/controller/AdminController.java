@@ -238,7 +238,7 @@ public class AdminController {
 		}else if((!"".equals(teacherNo) || teacherNo != null) &&("".equals(teacherName) || teacherName == null) ) {
 			List<Teacher> teachers = teacherService.showTeacherOne1(teacherNo);
 			if(teachers.isEmpty()) {
-				model.addAttribute("showMessage", "This teacher does not exist");
+				model.addAttribute("message", "This teacher does not exist");
 			}else {
 				for(int i=0;i<teachers.size();i++) {
 					
@@ -255,7 +255,7 @@ public class AdminController {
 			teacherName = new String(teacherName.getBytes("iso-8859-1"),"utf-8");
 			List<Teacher> teachers = teacherService.showTeacherOne2(teacherName);
 			if(teachers.isEmpty()) {
-				model.addAttribute("showMessage", "This teacher does not exist");
+				model.addAttribute("message", "This teacher does not exist");
 			}else {
 				for(int i=0;i<teachers.size();i++) {
 					System.out.println(teachers.get(i));
@@ -272,7 +272,7 @@ public class AdminController {
 			teacherNo = new String(teacherNo.getBytes("iso-8859-1"),"utf-8");
 			List<Teacher> teachers = teacherService.showTeacherOne3(teacherNo, teacherName);
 			if(teachers.isEmpty()) {
-				model.addAttribute("showMessage", "This teacher does not exist");
+				model.addAttribute("message", "This teacher does not exist");
 			}else {
 				for(int i=0;i<teachers.size();i++) {
 					System.out.println(teachers.get(i));
@@ -446,7 +446,7 @@ public class AdminController {
 		}else if((!"".equals(studentNo) || studentNo != null) &&("".equals(studentName) || studentName == null) ) {
 			List<Student> students = studentService.showStudentOne1(studentNo);
 			if(students.isEmpty()) {
-				model.addAttribute("showMessage", "This student does not exist.");
+				model.addAttribute("message", "This student does not exist.");
 			}else {
 				for(int i=0;i<students.size();i++) {
 					
@@ -462,7 +462,7 @@ public class AdminController {
 			studentName = new String(studentName.getBytes("iso-8859-1"),"utf-8");
 			List<Student> students = studentService.showStudentOne2(studentName);
 			if(students.isEmpty()) {
-				model.addAttribute("showMessage", "This student does not exist.");
+				model.addAttribute("message", "This student does not exist.");
 			}else {
 				for(int i=0;i<students.size();i++) {
 					int mojarId = students.get(i).getMajorId();
@@ -478,7 +478,7 @@ public class AdminController {
 			studentNo = new String(studentNo.getBytes("iso-8859-1"),"utf-8");
 			List<Student> students = studentService.showStudentOne3(studentNo, studentName);
 			if(students.isEmpty()) {
-				model.addAttribute("showMessage", "This student does not exist.");
+				model.addAttribute("message", "This student does not exist.");
 			}else {
 				for(int i=0;i<students.size();i++) {
 					int mojarId = students.get(i).getMajorId();
