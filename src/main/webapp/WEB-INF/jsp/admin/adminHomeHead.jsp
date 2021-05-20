@@ -25,9 +25,7 @@
 
 <div class="container">
 		<nav class="navbar navbar-default">
-		<div class="container-fluid">
 
-			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -87,7 +85,7 @@
 				</ul>
 				<!-- 显示当前用户 -->
 				<ul class="nav navbar-nav navbar-right">
-					<p class="navbar-text" style="color: red">Current User:&nbsp;${sessionScope.currentUser.userNo }</p>
+					<p class="navbar-text" style="color: red">Current User : &nbsp;${sessionScope.currentUser.userNo }</p>
 				</ul>
 				
 			</div>

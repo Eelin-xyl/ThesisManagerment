@@ -15,17 +15,15 @@
 	
 	<div class="container">
 		
-		<div class="col-md-2">
-			
-		</div>
+		<div class="col-md-2"></div>
+		
 		<div class="col-md-8">
 			<ul class="list-inline">
-				<li>Information Management</li>
-				<li>/</li>
-				<li>Modify Password</li>
-			</ul>
+				<li>Information Management	/	Modify Password</li>
+			</ul>	
 			<form role="form" class="form-horizontal" action="${pageContext.request.contextPath}/modifyPassword" method="post">
-				<!-- 第一个是用户名  第二个是原始密码-->
+
+<!-- 				The first one is username, second is original password. -->
 				<input type="hidden" class="form-control" name="currentUserNo" id="currentUserNo" value="${sessionScope.currentUser.userNo }">
 				<input type="hidden" class="form-control" name="db_password" id="db_password" value="${sessionScope.currentUser.password }">
 				<div class="form-group">
