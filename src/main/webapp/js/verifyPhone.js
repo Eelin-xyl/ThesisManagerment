@@ -1,8 +1,4 @@
-/**
- * 
- */
- 
- function verify() {
+function verify() {
 	var phone = document.getElementById("phone").value;
 	if (phone.length == 11) {
 

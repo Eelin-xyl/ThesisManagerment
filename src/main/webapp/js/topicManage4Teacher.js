@@ -24,7 +24,7 @@
  		
  		var num = thesis.length;
  		if(num == 0 ){
- 			alert("该教师没有上传过课题,请勿操作");
+ 			alert("This teacher does not have topic.");
  			var sbb = document.getElementById("submitButton");
  			sbb.setAttribute("disabled","disabled");
  		}

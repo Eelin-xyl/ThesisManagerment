@@ -15,10 +15,7 @@
  
 
 	function getPassword(){
-		// var userNo= document.getElementById("currentUserNo").value;
 		var password= document.getElementById("db_password").value;
-		/*alert(userNo);
-		alert(password);*/
 		var oldPassword= document.getElementById("oldPassword").value;
 		if(password!=oldPassword){
 			alert("The original password is wrong.");

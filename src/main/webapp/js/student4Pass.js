@@ -24,7 +24,7 @@
  		
  		var num = student.length;
  		if(num == 0 ){
- 			alert("没有学生选择课题或没有毕业论文通过的学生，请勿操作");
+ 			alert("There is no student in this topic, please do not operate.");
  			var sbb = document.getElementById("submitButton");
  			sbb.setAttribute("disabled","disabled");
  		}
