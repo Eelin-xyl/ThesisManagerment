@@ -10,7 +10,7 @@
 <style>
 	body{        
 	    background-image: url(../images/bg.jpg);
-	   background-attachment: fixed;
+	   	background-attachment: fixed;
 	}
 	
 	*{
@@ -102,19 +102,22 @@
 				</ul>
 				
 				<ul class="nav navbar-nav">
-					<li><a href="${pageContext.request.contextPath}/quit">Exit</a></li>
-				</ul>
-				
-				<!-- 显示当前用户 -->
-				<ul class="nav navbar-nav navbar-right">
-					<p class="navbar-text" >
-						<a href="${pageContext.request.contextPath}/student/main" style="color: red">
-							Current User: &nbsp;${sessionScope.student.studentName }
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" style="color: red">
+							Current User : ${sessionScope.student.studentName }
 						</a>
-					</p>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="${pageContext.request.contextPath}/student/main" >
+									Personal Information
+								</a>							
+							</li>
+							<li>
+								<a href="${pageContext.request.contextPath}/quit">Exit</a>
+							</li>
+						</ul>
+					</li>
 				</ul>
-
-				
 			</div>
 			<!-- /.navbar-collapse -->
 		</div>
