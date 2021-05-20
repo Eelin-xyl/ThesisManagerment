@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Topic Selection</title>
+<title>Topic Management</title>
 <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/topicManage.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/getThesisDesc.js"></script>
@@ -16,11 +16,8 @@
 	<div class="container">
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
-			<!-- <h4>选择课题</h4> -->
 			<ul class="list-inline">
-					<li>Topic Management</li>
-					<li>/</li>
-					<li>Topic Selection</li>
+					<li>Topic Management	/	Topic Selection</li>
 				</ul>
 			<br>
 			<form action="${pageContext.request.contextPath}/student/selectTopic" method="post">

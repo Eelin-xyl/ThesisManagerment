@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Topic Result</title>
+<title>Topic Management</title>
 <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <% 
@@ -19,11 +19,8 @@
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<!-- <h4>选题结果</h4> -->
 				<ul class="list-inline">
-					<li>Topic Management</li>
-					<li>/</li>
-					<li>Topic Result</li>
+					<li>Topic Management	/	Topic Result</li>
 				</ul>
 				<font></font>
 				<table class="table table-bordered" >

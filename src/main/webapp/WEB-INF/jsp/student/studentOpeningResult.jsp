@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Opening Report</title>
+<title>Schedule Management</title>
 <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -15,11 +15,8 @@
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<!-- <h4>完成情况</h4> -->
 				<ul class="list-inline">
-					<li>Schedule Management</li>
-					<li>/</li>
-					<li>Opening Report</li>
+					<li>Schedule Management    /	Opening Report</li>
 				</ul>
 				<div align="center">
 					<p><font color="red" size="5px">${message }</font></p>

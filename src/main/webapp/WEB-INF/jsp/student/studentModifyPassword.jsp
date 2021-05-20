@@ -16,7 +16,6 @@
 	<div class="container">
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
-			<!-- <h4>修改密码</h4> -->
 			<ul class="list-inline">
 					<li>Information Management	/	Modify Password</li>
 				</ul>

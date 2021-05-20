@@ -105,7 +105,7 @@
 					<li><a href="${pageContext.request.contextPath}/quit">Exit</a></li>
 				</ul>
 				
-				<!-- 显示当前用户 -->
+				<!-- show current user-->
 				<ul class="nav navbar-nav navbar-right">
 					<p class="navbar-text" >
 						<a href="${pageContext.request.contextPath}/student/main" style="color: red">

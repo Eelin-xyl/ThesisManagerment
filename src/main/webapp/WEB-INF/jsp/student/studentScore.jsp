@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Check Score</title>
+<title>Score Management</title>
 <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -15,11 +15,8 @@
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<!-- <h4>查看成绩</h4> -->
 				<ul class="list-inline">
-					<li>Score Management</li>
-					<li>/</li>
-					<li>Check Score</li>
+					<li>Score Management	/	Score Check</li>
 				</ul>
 				<table class="table">
 					<tr>
