@@ -34,10 +34,6 @@
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
-						<li>
-					<a href="${pageContext.request.contextPath}/teacher/main">Teacher Information</a>
-						
-						</li>
 							<li>
 								<a href="${pageContext.request.contextPath}/teacher/modifyInfo">Modify Information</a>
 							</li>
@@ -53,7 +49,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Topic Management</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="${pageContext.request.contextPath}/teacher/uploadThesisTitle">Upload Topic</a>
+								<a href="${pageContext.request.contextPath}/teacher/uploadThesisTitle">Topic Upload</a>
 							</li>
 							<li>
 								<a href="${pageContext.request.contextPath}/teacher/thesisResult">Topic Result</a>
@@ -99,7 +95,7 @@
 						<ul class="dropdown-menu">
 
 							<li>
-								<a href="${pageContext.request.contextPath}/teacher/uploadFileResult">Uploaded File</a>
+								<a href="${pageContext.request.contextPath}/teacher/uploadFileResult">File Review</a>
 							</li>
 							<li>
 								<a href="${pageContext.request.contextPath}/teacher/checkThesis">Thesis Audition</a>
@@ -115,7 +111,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >Thesis Score</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="${pageContext.request.contextPath}/teacher/scoreAdd">Add Score</a>
+								<a href="${pageContext.request.contextPath}/teacher/scoreAdd">Score Add</a>
 							</li>
 							<li>
 								<a href="${pageContext.request.contextPath}/teacher/scoreModify">Score Review</a>
@@ -127,10 +123,14 @@
 				<ul class="nav navbar-nav">
 					<li><a href="${pageContext.request.contextPath}/quit">Exit</a></li>
 				</ul>
-				<!-- 显示当前用户 -->
 				<ul class="nav navbar-nav navbar-right">
-				
-					<p class="navbar-text" style="color: red">Current User : &nbsp; ${sessionScope.currentUser.userNo  }</p>
+
+					<p class="navbar-text" >
+						<a href="${pageContext.request.contextPath}/teacher/main" style="color: red">
+							Current User : &nbsp; ${sessionScope.teacher.teacherName  }
+						</a>
+					</p>
+
 				</ul>
 				
 			</div>

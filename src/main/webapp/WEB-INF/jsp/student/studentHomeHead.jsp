@@ -33,10 +33,6 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Information Management</a>
 						<ul class="dropdown-menu">
-						<li>
-							<a href="${pageContext.request.contextPath}/student/main">Student Information</a>
-						
-						</li>
 							<li>
 								<a href="${pageContext.request.contextPath}/student/modifyInfo">Modify Information</a>
 							</li>
@@ -111,7 +107,11 @@
 				
 				<!-- 显示当前用户 -->
 				<ul class="nav navbar-nav navbar-right">
-					<p class="navbar-text" style="color: red">Current User: &nbsp;${sessionScope.currentUser.userNo }</p>
+					<p class="navbar-text" >
+						<a href="${pageContext.request.contextPath}/student/main" style="color: red">
+							Current User: &nbsp;${sessionScope.student.studentName }
+						</a>
+					</p>
 				</ul>
 
 				
