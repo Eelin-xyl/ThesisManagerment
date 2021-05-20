@@ -34,10 +34,6 @@
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
-						<li>
-					<a href="${pageContext.request.contextPath}/teacher/main">Teacher Information</a>
-						
-						</li>
 							<li>
 								<a href="${pageContext.request.contextPath}/teacher/modifyInfo">Modify Information</a>
 							</li>
@@ -129,8 +125,11 @@
 				</ul>
 				<!-- 显示当前用户 -->
 				<ul class="nav navbar-nav navbar-right">
-				
-					<p class="navbar-text" style="color: red">Current User &nbsp; ${sessionScope.currentUser.userNo  }</p>
+					<p class="navbar-text" >
+						<a href="${pageContext.request.contextPath}/teacher/main" style="color: red">
+							Current User &nbsp; ${sessionScope.teacher.teacherName  }
+						</a>
+					</p>
 				</ul>
 				
 			</div>
