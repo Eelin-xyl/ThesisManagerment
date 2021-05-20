@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<i%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
     <html>
 
@@ -33,21 +33,16 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Information
-								Management</a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="${pageContext.request.contextPath}/admin/modifyPassword">Modify
-										Password</a>
-                                </li>
-                            </ul>
+                            <a href="${pageContext.request.contextPath}/admin/modifyPassword">
+                                Password Management
+                            </a>
                         </li>
                     </ul>
 
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Teacher
-								Management</a>
+                                Management</a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a href="${pageContext.request.contextPath}/admin/teacherAdd">Teacher Add</a>
@@ -62,7 +57,7 @@
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Student
-								Management</a>
+                                Management</a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a href="${pageContext.request.contextPath}/admin/studentAdd">Student Add</a>
@@ -76,21 +71,17 @@
 
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Topic
-								Management</a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="${pageContext.request.contextPath}/admin/checkThesis">Topic Review</a>
-                                </li>
-                            </ul>
+                            <a href="${pageContext.request.contextPath}/admin/checkThesis">
+                                Topic Management
+                            </a>
                         </li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" style="color: red">
-								Current User : &nbsp; ${sessionScope.currentUser.userNo }
-							</a>
+                                Current User : &nbsp; ${sessionScope.currentUser.userNo }
+                            </a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a href="${pageContext.request.contextPath}/quit">Exit</a>

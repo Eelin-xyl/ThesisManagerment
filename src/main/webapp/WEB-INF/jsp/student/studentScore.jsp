@@ -17,7 +17,7 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                     <ul class="list-inline">
-                        <li>Score Management / Score Check</li>
+                        <li>Score Check</li>
                     </ul>
                     <table class="table">
                         <tr>

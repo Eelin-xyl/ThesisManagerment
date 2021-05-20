@@ -20,7 +20,7 @@
 
             <div class="col-md-8">
                 <ul class="list-inline">
-                    <li>Information Management / Modify Password</li>
+                    <li>Password Management</li>
                 </ul>
                 <form role="form" class="form-horizontal" action="${pageContext.request.contextPath}/modifyPassword" method="post">
 

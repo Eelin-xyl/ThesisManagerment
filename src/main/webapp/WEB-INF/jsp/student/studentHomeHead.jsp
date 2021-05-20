@@ -102,16 +102,9 @@
                             </li>
                         </ul>
 
-
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Score
-                                    Management</a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="${pageContext.request.contextPath}/student/score">Score Check</a>
-                                    </li>
-                                </ul>
+                                <a href="${pageContext.request.contextPath}/student/score">Score Check</a>
                             </li>
                         </ul>
 

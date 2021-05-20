@@ -19,7 +19,7 @@
                     <div class="col-md-2"></div>
                     <div class="col-md-8">
                         <ul class="list-inline">
-                            <li>Topic Management / Topic Review</li>
+                            <li>Topic Management</li>
                         </ul>
 
                         <table class="table table-responsive">

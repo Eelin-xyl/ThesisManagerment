@@ -19,7 +19,7 @@
                     <div class="col-md-2"></div>
                     <div class="col-md-8">
                         <ul class="list-inline">
-                            <li>Student List / Student Information Review</li>
+                            <li>Student List</li>
                         </ul>
                         <table class="table table-bordered">
                             <thead>
