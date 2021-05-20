@@ -79,15 +79,18 @@
 					</li>
 				</ul>
 				
-				
 				<ul class="nav navbar-nav">
-					<li><a href="${pageContext.request.contextPath}/quit">Exit</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" style="color: red">
+							Current User : ${sessionScope.currentUser.userNo }
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="${pageContext.request.contextPath}/quit">Exit</a>
+							</li>
+						</ul>
+					</li>
 				</ul>
-
-				<ul class="nav navbar-nav navbar-right">
-					<p class="navbar-text" style="color: red">Current User : &nbsp;${sessionScope.currentUser.userNo }</p>
-				</ul>
-				
 			</div>
 			<!-- /.navbar-collapse -->
 		</div>

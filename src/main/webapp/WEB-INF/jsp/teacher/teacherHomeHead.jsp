@@ -121,18 +121,20 @@
 				</ul>
 				
 				<ul class="nav navbar-nav">
-					<li><a href="${pageContext.request.contextPath}/quit">Exit</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-
-					<p class="navbar-text" >
-						<a href="${pageContext.request.contextPath}/teacher/main" style="color: red">
-							Current User : &nbsp; ${sessionScope.teacher.teacherName  }
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" style="color: red">
+							Current User : ${sessionScope.teacher.teacherName }
 						</a>
-					</p>
-
-				</ul>
-				
+						<ul class="dropdown-menu">
+							<li>
+								<a href="${pageContext.request.contextPath}/teacher/main">Personal Information</a>
+							</li>
+							<li>
+								<a href="${pageContext.request.contextPath}/quit">Exit</a>
+							</li>
+						</ul>
+					</li>
+				</ul>					
 			</div>
 			<!-- /.navbar-collapse -->
 		</div>
