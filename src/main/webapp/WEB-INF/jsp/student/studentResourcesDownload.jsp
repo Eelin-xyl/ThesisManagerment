@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Uploaded File Review</title>
+<title>File Management</title>
 <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -17,11 +17,8 @@
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<!-- <h4>文档列表</h4> -->
 				<ul class="list-inline">
-					<li>File Management</li>
-					<li>/</li>
-					<li>Uploaded File Review</li>
+					<li>File Management    /	File Review</li>
 				</ul>
 
 				<table class="table">

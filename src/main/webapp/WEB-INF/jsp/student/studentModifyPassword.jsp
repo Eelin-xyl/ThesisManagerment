@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Password Change</title>
+<title>Information Management</title>
 <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/passwordManage.js"></script>
 </head>
@@ -16,11 +16,8 @@
 	<div class="container">
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
-			<!-- <h4>修改密码</h4> -->
 			<ul class="list-inline">
-					<li>Information Management</li>
-					<li>/</li>
-					<li>Password Change</li>
+					<li>Information Management	/	Modify Password</li>
 				</ul>
 			<form role="form" class="form-horizontal" action="${pageContext.request.contextPath}/modifyPassword" method="post">
 				<input type="hidden" class="form-control" name="currentUserNo" id="currentUserNo" value="${sessionScope.currentUser.userNo }">

@@ -330,7 +330,7 @@ public class StudentController {
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("student", student);
-		
+		model.addAttribute("message", "Modify successfully.");
 		return "student/main.jsp";
 	}
 	
