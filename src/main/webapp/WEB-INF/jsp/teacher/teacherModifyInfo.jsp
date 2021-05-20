@@ -18,11 +18,8 @@
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<!-- <h4>修改信息</h4> -->
 				<ul class="list-inline">
-					<li>Information Management</li>
-					<li>/</li>
-					<li>Modify Information</li>
+					<li>Information Management	/	Modify Information</li>
 				</ul>
 				
 				<form role="form" class="form-horizontal" action="${pageContext.request.contextPath}/teacher/modifyInfoToDb" method="post">

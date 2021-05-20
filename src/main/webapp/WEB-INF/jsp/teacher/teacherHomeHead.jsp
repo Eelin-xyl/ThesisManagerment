@@ -42,7 +42,7 @@
 								<a href="${pageContext.request.contextPath}/teacher/modifyInfo">Modify Information</a>
 							</li>
 							<li>
-								<a href="${pageContext.request.contextPath}/teacher/modifyPassword">Password Change</a>
+								<a href="${pageContext.request.contextPath}/teacher/modifyPassword">Modify Password</a>
 							</li>
 						</ul>
 					</li>
@@ -130,7 +130,7 @@
 				<!-- 显示当前用户 -->
 				<ul class="nav navbar-nav navbar-right">
 				
-					<p class="navbar-text" style="color: red">Current User &nbsp; ${sessionScope.currentUser.userNo  }</p>
+					<p class="navbar-text" style="color: red">Current User : &nbsp; ${sessionScope.currentUser.userNo  }</p>
 				</ul>
 				
 			</div>
