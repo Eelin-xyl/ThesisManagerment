@@ -106,7 +106,7 @@ public class UserController {
 		
 		else {
 			model.addAttribute("message", "");
-			return "error.jsp";
+			return "index.jsp";
 		}
 	}
 	
@@ -129,8 +129,12 @@ public class UserController {
 		System.out.println("账户："+currentUserNo);*/
 		int num = userService.modifyPassword(currentUserNo, newPassword1);
 		System.out.println("修改了"+num+"条数据");
-		model.addAttribute("num", num);
-		return "modifySuccess.jsp";
+		return "redirect:/successmodify";
 	}
-	
+
+	@RequestMapping(value="/successmodify")
+	public String successmodify(Model model,HttpServletRequest request, String currentUserNo) { 
+		model.addAttribute("message", "Modify Password Successfully!");
+		return "../../index.jsp";
+	}
 }

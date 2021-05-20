@@ -411,37 +411,37 @@ public class StudentController {
 		return new ResponseEntity<byte[]>(FileUtils.readFileToByteArray(file),headers,HttpStatus.CREATED); 
 	}
 	
-	@RequestMapping(value="/uploadTaskBook")
-	public String studentUploadTaskBook(HttpServletRequest request, Model model,@RequestParam("file") MultipartFile file) throws Exception {
+	// @RequestMapping(value="/uploadTaskBook")
+	// public String studentUploadTaskBook(HttpServletRequest request, Model model,@RequestParam("file") MultipartFile file) throws Exception {
 		
-		Student currentUser = (Student)request.getSession().getAttribute("student");
-		int studentId = currentUser.getId();
+	// 	Student currentUser = (Student)request.getSession().getAttribute("student");
+	// 	int studentId = currentUser.getId();
 		
-		String studentIdToString = String.valueOf(studentId);
+	// 	String studentIdToString = String.valueOf(studentId);
 		
-		if(!file.isEmpty()) {
+	// 	if(!file.isEmpty()) {
 			
-			File fileRoot = new File("E:\\ThesisManagement\\student");
-			File fileDb = new File(fileRoot, studentIdToString);
-			String fileName = file.getOriginalFilename();
+	// 		File fileRoot = new File("E:\\ThesisManagement\\student");
+	// 		File fileDb = new File(fileRoot, studentIdToString);
+	// 		String fileName = file.getOriginalFilename();
 			
-			File filePath = new File(fileDb, fileName);
+	// 		File filePath = new File(fileDb, fileName);
 			
-			if(!filePath.getParentFile().exists()) {
-				filePath.getParentFile().mkdirs();
-			}
+	// 		if(!filePath.getParentFile().exists()) {
+	// 			filePath.getParentFile().mkdirs();
+	// 		}
 			
-			file.transferTo(new File(fileDb+File.separator+fileName));
+	// 		file.transferTo(new File(fileDb+File.separator+fileName));
 			
-			int num = studentService.uploadTaskBook(studentId, filePath.toString());
-			System.out.println("添加了"+num+"条信息");
-			model.addAttribute("message", "上传任务书成功");
-			return "student/main.jsp";
-		}else {
-			model.addAttribute("message", "上传任务书出错");
-			return "error.jsp";
-		}
-	}
+	// 		int num = studentService.uploadTaskBook(studentId, filePath.toString());
+	// 		System.out.println("添加了"+num+"条信息");
+	// 		model.addAttribute("message", "上传任务书成功");
+	// 		return "student/main.jsp";
+	// 	}else {
+	// 		model.addAttribute("message", "上传任务书出错");
+	// 		return "error.jsp";
+	// 	}
+	// }
 	
 	@RequestMapping(value="/uploadOpening")
 	public String studentUploadOpening(HttpServletRequest request, Model model,@RequestParam("file") MultipartFile file) throws Exception {
