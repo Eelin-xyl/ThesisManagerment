@@ -15,11 +15,22 @@ import com.sa.entity.Topic;
 /**
  * 
  * @author LaoYu
+ * 
  *add, delete, update, search student
  *show all students
  *get student information based on student id
  *get available thesis topic list
+ *get chosen topic and related student information
+ *student choose topic
+ *get assignment based on topic and student id
+ *upload opening report
+ *download assignment based on Map(name, path)
+ *delete assignment, thesis, opening report
+ *get assignment information 
+ *get topic information based topic id
+ *search, delete thesis information based on student
  */
+
 public interface IStudentService {
 	
 	int addStudent(Student student);
@@ -46,23 +57,23 @@ public interface IStudentService {
 	
 	int addTopicToDb(Topic topic);
 	
-	int deleteTopic(int studentId);
+//	int deleteTopic(int studentId);
 	
 	TeacherTaskBookOpening getFilePathByThesisId(int thesisId);
 	
 	StudentTaskBookOpening getSTBOInfoById(int studentId);
 	
-	int uploadTaskBook(int studentId,String filePath);
+//	int uploadTaskBook(int studentId,String filePath);
 	
 	int uploadOpening(int studentId,String filePath);
 	
 	Map<String, String> getTaskBookOpeningToMap(int studentId);
 	
-	int resetTaskBook(int studentId);
+//	int resetTaskBook(int studentId);
 	
 	int resetOpening(int studentId); 
 	
-	StudentTaskBookOpening getInfoByTaskBookPath(String taskBookPath);
+//	StudentTaskBookOpening getInfoByTaskBookPath(String taskBookPath);
 	
 	StudentTaskBookOpening getInfoByOpeningPath(String openingPath);
 	

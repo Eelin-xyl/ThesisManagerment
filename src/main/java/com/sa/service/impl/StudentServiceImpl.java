@@ -160,11 +160,11 @@ public class StudentServiceImpl implements IStudentService{
 	}
 
 
-	public int deleteTopic(int studentId) {
-		// TODO Auto-generated method stub
-		int num = topicDao.deleteTopic(studentId);
-		return num;
-	}
+//	public int deleteTopic(int studentId) {
+//		// TODO Auto-generated method stub
+//		int num = topicDao.deleteTopic(studentId);
+//		return num;
+//	}
 
 
 	public TeacherTaskBookOpening getFilePathByThesisId(int thesisId) {
@@ -235,12 +235,12 @@ public class StudentServiceImpl implements IStudentService{
 	}
 
 
-	public int resetTaskBook(int studentId) {
-		// TODO Auto-generated method stub
-		int num = studentTaskBookOpeningDao.resetTaskBook(studentId);
-		
-		return num;
-	}
+//	public int resetTaskBook(int studentId) {
+//		// TODO Auto-generated method stub
+//		int num = studentTaskBookOpeningDao.resetTaskBook(studentId);
+//		
+//		return num;
+//	}
 
 
 	public int resetOpening(int studentId) {
@@ -250,12 +250,12 @@ public class StudentServiceImpl implements IStudentService{
 	}
 
 
-	public StudentTaskBookOpening getInfoByTaskBookPath(String taskBookPath) {
-		// TODO Auto-generated method stub
-		StudentTaskBookOpening STBO = studentTaskBookOpeningDao.getInfoByTaskBookPath(taskBookPath);
-		
-		return STBO;
-	}
+//	public StudentTaskBookOpening getInfoByTaskBookPath(String taskBookPath) {
+//		// TODO Auto-generated method stub
+//		StudentTaskBookOpening STBO = studentTaskBookOpeningDao.getInfoByTaskBookPath(taskBookPath);
+//		
+//		return STBO;
+//	}
 
 
 	public StudentTaskBookOpening getInfoByOpeningPath(String openingPath) {

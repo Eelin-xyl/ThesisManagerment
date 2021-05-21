@@ -21,8 +21,7 @@
                     <ul class="list-inline">
                         <li>File Management / Upload File</li>
                     </ul>
-
-
+                    
                     <form role="form" class="form-horizontal" action="${pageContext.request.contextPath}/student/uploadOpening" method="post" enctype="multipart/form-data">
                         <div class="col-md-3">
                             <label class=" control-label">Opening Report:</label>

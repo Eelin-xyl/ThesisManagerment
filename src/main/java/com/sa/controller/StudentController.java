@@ -55,44 +55,44 @@ public class StudentController {
 	@Autowired
 	private ITeacherService teacherService;
 	
-	@RequestMapping(value="/add",method=RequestMethod.GET)
-	public String addStudentForm() {
-		return "student/addStudent.jsp";
-	}
-	
+//	@RequestMapping(value="/add",method=RequestMethod.GET)
+//	public String addStudentForm() {
+//		return "student/addStudent.jsp";
+//	}
+//	
 	
 	// 已废除
-	@RequestMapping(value="/add",method=RequestMethod.POST)
-	public String addStudent(HttpServletRequest request,String studentNo, String studentName,String sex,String grade ,String inputMan,String phone,String major,Model model) throws Exception {
-		studentNo = new String(studentNo.getBytes("iso-8859-1"),"utf-8");
-		studentName = new String(studentName.getBytes("iso-8859-1"),"utf-8");
-		sex = new String(sex.getBytes("iso-8859-1"),"utf-8");
-		grade = new String(grade.getBytes("iso-8859-1"),"utf-8");
-		inputMan = new String(inputMan.getBytes("iso-8859-1"),"utf-8");
-		phone = new String(phone.getBytes("iso-8859-1"),"utf-8");
-		major = new String(major.getBytes("iso-8859-1"),"utf-8");
-		Date currentTime = new Date();
-		
-		Student student = new Student();
-		student.setStudentNo(studentNo);
-		student.setStudentName(studentName);
-		student.setSex(sex);
-		student.setGrade(grade);
-		student.setInputMan(inputMan);
-		student.setPhone(phone);
-		student.setMajorId(Integer.parseInt(major));
-		student.setLastModifyTime(currentTime);
-		
-		int addNum = studentService.addStudent(student);
-		System.out.println("添加数目："+addNum);
-		
-		return "student/addSuccess.jsp";
-	}
+//	@RequestMapping(value="/add",method=RequestMethod.POST)
+//	public String addStudent(HttpServletRequest request,String studentNo, String studentName,String sex,String grade ,String inputMan,String phone,String major,Model model) throws Exception {
+//		studentNo = new String(studentNo.getBytes("iso-8859-1"),"utf-8");
+//		studentName = new String(studentName.getBytes("iso-8859-1"),"utf-8");
+//		sex = new String(sex.getBytes("iso-8859-1"),"utf-8");
+//		grade = new String(grade.getBytes("iso-8859-1"),"utf-8");
+//		inputMan = new String(inputMan.getBytes("iso-8859-1"),"utf-8");
+//		phone = new String(phone.getBytes("iso-8859-1"),"utf-8");
+//		major = new String(major.getBytes("iso-8859-1"),"utf-8");
+//		Date currentTime = new Date();
+//		
+//		Student student = new Student();
+//		student.setStudentNo(studentNo);
+//		student.setStudentName(studentName);
+//		student.setSex(sex);
+//		student.setGrade(grade);
+//		student.setInputMan(inputMan);
+//		student.setPhone(phone);
+//		student.setMajorId(Integer.parseInt(major));
+//		student.setLastModifyTime(currentTime);
+//		
+//		int addNum = studentService.addStudent(student);
+//		System.out.println("添加数目："+addNum);
+//		
+//		return "student/addSuccess.jsp";
+//	}
 	
-	@RequestMapping(value="/info",method=RequestMethod.GET)
-	public String studentInfo() {
-		return "student/studentPersionalInformation.jsp";
-	}
+//	@RequestMapping(value="/info",method=RequestMethod.GET)
+//	public String studentInfo() {
+//		return "student/studentPersionalInformation.jsp";
+//	}
 	
 	@RequestMapping(value="/main",method=RequestMethod.GET)
 	public String studentMainForm() {
@@ -121,12 +121,8 @@ public class StudentController {
 			return "student/studentThesis.jsp";
 		}else {
 			model.addAttribute("topicMessage", "You can only choose a topic once.");
-			
 			return "student/main.jsp";
 		}
-		
-		
-		
 	}
 	
 	@RequestMapping(value="/thesisResult",method=RequestMethod.GET)
@@ -137,9 +133,7 @@ public class StudentController {
 		int studentId = student.getId();
 		Topic topic = studentService.chosenThesisTitle(studentId);
 		if(topic == null || "".equals(topic)) {
-			model.addAttribute("topicMessage", "Please select a topic first.");
-//			model.addAttribute("realTimeTopicMessage", realTimeTopicMessageOn);
-			
+			model.addAttribute("topicMessage", "Please select a topic first.");			
 			return "student/main.jsp";
 		}else {
 			int thesisId = topic.getThesisId();
@@ -147,10 +141,7 @@ public class StudentController {
 			ThesisTitle theisTitle = teacherService.getThesisById(thesisId);
 			String topicName = theisTitle.getThesisName();
 			
-			model.addAttribute("topicName", topicName);
-			
-//			model.addAttribute("realTimeTopicMessage", realTimeTopicMessageOn);
-			
+			model.addAttribute("topicName", topicName);			
 			return "student/studentThesisResult.jsp";
 		}
 		
@@ -172,8 +163,10 @@ public class StudentController {
 			}else {
 				// 获得数据库中的文件目录；
 				String taskBookPath = ttbo.getTaskBook();
-				String openingPath = ttbo.getOpeningReport();
 				
+				//get opening report path
+//				String openingPath = ttbo.getOpeningReport();
+//				
 				Map<String, String> fileList = new HashMap<String, String>();
 
 				if(taskBookPath == null || "".equals(taskBookPath)) {
@@ -184,13 +177,13 @@ public class StudentController {
 					fileList.put(taskBookName, taskBookPath);
 				}
 				
-				if(openingPath == null || "".equals(openingPath)) {
-					
-				}else {
-					String[] str2 = openingPath.split("\\\\");
-					String openingName = str2[str2.length-1].toString();
-					fileList.put(openingName, openingPath);
-				}
+//				if(openingPath == null || "".equals(openingPath)) {
+//					
+//				}else {
+//					String[] str2 = openingPath.split("\\\\");
+//					String openingName = str2[str2.length-1].toString();
+//					fileList.put(openingName, openingPath);
+//				}
 				model.addAttribute("fileList", fileList);
 				
 				return "student/studentViewTaskBookAndOpening.jsp";
@@ -219,10 +212,7 @@ public class StudentController {
 //				progresses.get(i).setStateName("已通过");
 //			}
 //		}
-		
-		
 		model.addAttribute("progressList", progresses);
-		
 		return "student/studentSectionTask.jsp";
 	}
 	
@@ -236,7 +226,6 @@ public class StudentController {
 		
 		Student currentUser = (Student)request.getSession().getAttribute("student");
 		int studentId = currentUser.getId();
-		
 		
 		Map<String, String> fileList = studentService.getTaskBookOpeningToMap(studentId);
 		if(fileList.isEmpty()) {
@@ -320,9 +309,9 @@ public class StudentController {
 		student.setPhone(phone);
 		
 		int num = studentService.updateStudent(student);
-		System.out.println("修改学生数目："+num);
+		System.out.println("Change the num of student："+num);
 		
-		// 根据 院系id 获得专业name
+		// get department based on major
 		int majId = student.getMajorId();
 		String majorNameNew = majorService.getNameById(majId);
 		student.setMajorName(majorNameNew);
@@ -370,12 +359,6 @@ public class StudentController {
 		sb.append(studentNo);
 		sb.append("的学生，选择了");
 		sb.append(thesisName);
-		
-		
-		String infoMessage = sb.toString();
-		
-//		this.realTimeTopicMessageOn = infoMessage;
-//		model.addAttribute("realTimeTopicMessage", realTimeTopicMessageOn);
 		
 		studentThesisResult(response, request, model);
 		return "student/studentThesisResult.jsp";
@@ -507,23 +490,23 @@ public class StudentController {
 			
 		}else {
 			int num1 = studentService.deleteThesisInformation(studentId);
-			System.out.println("成功删除论文文件");
+			System.out.println("Delete thesis successfully");
 		}
 		
-		StudentTaskBookOpening STBO = studentService.getInfoByTaskBookPath(filePath);
-		if(STBO == null || "".equals(STBO)) {
-			
-		}else {
-			int num = studentService.resetTaskBook(studentId);
-			System.out.println("成功删除任务书");
-		}
+//		StudentTaskBookOpening STBO = studentService.getInfoByTaskBookPath(filePath);
+//		if(STBO == null || "".equals(STBO)) {
+//			
+//		} 
+//			 else { int num = studentService.resetTaskBook(studentId);
+//			 System.out.println("成功删除任务书"); }
+//			 
 		
 		StudentTaskBookOpening STBO2 = studentService.getInfoByOpeningPath(filePath);
 		if(STBO2==null || "".equals(STBO2) ) {
 			
 		}else {
 			int num = studentService.resetOpening(studentId);
-			System.out.println("成功删除开题报告");
+			System.out.println("Delete Opening Report successfully");
 		}
 		
 		model.addAttribute("message", "Delete successfully.");
@@ -552,15 +535,6 @@ public class StudentController {
 		return "student/studentOpeningResult.jsp";
 	}
 	
-//	@RequestMapping(value="/getRealTimeTopic")
-//	public void getRealTimeTopic(HttpServletResponse response,HttpServletRequest request) throws Exception {
-////		String message = (String)request.getSession().getServletContext().getAttribute("realTimeTopicMessage");
-////		JSONObject jsObject = JSONObject.fromObject(message);
-//		response.setContentType("text/html;charset=UTF-8");
-//		PrintWriter write = response.getWriter();
-//		write.write(jsObject.toString());
-//		write.close();
-//	}
 	
 	@RequestMapping(value="/uploadThesisInformation")
 	public String studentUploadThesisInformation(HttpServletRequest request, Model model,@RequestParam("file") MultipartFile file) throws Exception {

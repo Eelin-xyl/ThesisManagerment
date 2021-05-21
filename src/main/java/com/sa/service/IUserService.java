@@ -4,13 +4,11 @@ import com.sa.entity.User;
 
 /**
  * 
- * @author rcx
- * 
- * 验证登陆
- * 根据no获得用户信息
- * 修改密码
- * 
+ * @author LaoYu
  *
+ *login
+ *modify password
+ *get information based on user ID
  */
 public interface IUserService {
 	public User login(String userNo,String password);
