@@ -5,8 +5,8 @@ import java.util.List;
 import com.sa.entity.Major;
 
 /**
- * @date 2020-12-10
- * @author rcx
+ * @date 2021-05-10
+ * @author Eelin
  * 查询全部的专业；
  * id ==> name
  * name ==> id

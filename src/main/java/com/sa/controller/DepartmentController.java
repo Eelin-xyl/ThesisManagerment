@@ -17,7 +17,7 @@ import net.sf.json.JSONArray;
 
 /**
  * 
- * @author rcx
+ * @author Eelin
  * 
  * showAllDep() 显示所以院系信息
  *

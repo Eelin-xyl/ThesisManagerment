@@ -61,10 +61,10 @@ public class UserController {
 		if(currentUser.getPermission()==1) {
 			HttpSession session = request.getSession();
 			session.setMaxInactiveInterval(3600);
-			// user 表中的关于学生的信息
+			// UsersInfo
 			session.setAttribute("currentUser", currentUser);
 			
-			// student 表中的信息
+			// StudentInfo
 			Student student = studentService.getStudentByNO(userNo);
 			int majorId = student.getMajorId();
 			String majorName = majorService.getNameById(majorId);
@@ -78,10 +78,10 @@ public class UserController {
 		if(currentUser.getPermission()==2) {
 			HttpSession session = request.getSession();
 			session.setMaxInactiveInterval(3600);
-			// 在user表的信息
+			// UserInfo
 			session.setAttribute("currentUser", currentUser);
 			
-			// 完整的teacher信息
+			// TeacherInfo
 			Teacher teacher = teacherService.showInfoByNo(userNo);
 			int depId = teacher.getDepartmentId();
 			String depName = departmentService.getNameById(depId);
@@ -123,10 +123,9 @@ public class UserController {
 	@RequestMapping(value="/modifyPassword",method=RequestMethod.POST)
 	public String modifyPassword(Model model,String newPassword1,String currentUserNo) {
 		
-		/*System.out.println("新的密码："+newPassword1);
-		System.out.println("账户："+currentUserNo);*/
+		/*System.out.println("new："+newPassword1);
+		System.out.println("No.："+currentUserNo);*/
 		int num = userService.modifyPassword(currentUserNo, newPassword1);
-		System.out.println("修改了"+num+"条数据");
 		return "redirect:/successmodify";
 	}
 

@@ -97,7 +97,6 @@ public class AdminController {
 		}
 		
 		model.addAttribute("thesisTitleList", thesisList);
-		System.out.println("查询到该所以的课题有："+thesisList);
 		
 		return "admin/adminCheckThesis.jsp";
 	}
@@ -133,7 +132,6 @@ public class AdminController {
 			teacher.setPhone(phone);
 			
 			int addNum = teacherService.addTeacher(teacher);
-			// System.out.println("添加数目："+addNum);
 			msg = "Add teacher information successfully.";
 //			model.addAttribute("message", "Add teacher information successfully.");
 			return "redirect:/admin/showAllTeacher";
@@ -156,7 +154,6 @@ public class AdminController {
 		model.addAttribute("message", msg);
 		msg = "";
 		model.addAttribute("teacherList", teachers);
-		System.out.println("全部教师集合："+teachers);
 		return "admin/adminTeacherManage.jsp";
 	}
 	
@@ -164,8 +161,6 @@ public class AdminController {
 	public String adminDeleteTeacher(int id,Model model) {
 		// System.out.println(id);
 		int num = teacherService.deleteTeacher(id);
-		// System.out.println("删除了"+num+"条数据！");
-//		model.addAttribute("message", "成功删除一条教师信息");
 		msg = "Delete teacher information successfully";
 		return "redirect:/admin/showAllTeacher";
 	}
@@ -224,7 +219,6 @@ public class AdminController {
 		
 		int num = teacherService.updateTeacher(teacher);
 		System.out.println("修改数目："+num);
-//		model.addAttribute("message", "成功修改一条教师信息");
 		msg = "Modify teacher information successfully";
 		return "redirect:/admin/showAllTeacher";
 	}
@@ -251,7 +245,6 @@ public class AdminController {
 				}
 			}
 			model.addAttribute("teacherList", teachers);
-			System.out.println("教师集合："+teachers);
 			return "admin/adminTeacherManage.jsp";
 			
 		}else if(("".equals(teacherNo) || teacherNo == null) && (!"".equals(teacherName) || teacherName != null)) {
@@ -270,7 +263,6 @@ public class AdminController {
 				}
 			}
 			model.addAttribute("teacherList", teachers);
-			System.out.println("教师集合："+teachers);
 			return "admin/adminTeacherManage.jsp";
 		} else {
 			teacherName = new String(teacherName.getBytes("iso-8859-1"),"utf-8");
@@ -290,7 +282,6 @@ public class AdminController {
 			}
 			
 			model.addAttribute("teacherList", teachers);
-			System.out.println("教师集合："+teachers);
 			return "admin/adminTeacherManage.jsp";
 		}
 		return "admin/adminTeacherManage.jsp";
@@ -329,14 +320,11 @@ public class AdminController {
 			student.setLastModifyTime(currentTime);
 			
 			int addNum = studentService.addStudent(student);
-			// System.out.println("添加数目："+addNum);
 			
 //			model.addAttribute("message", "Add student information successfully.");
 			msg = "Add student information successfully.";
 			return "redirect:/admin/showAllStudent";
 		}
-		
-		
 		
 		
 	}
@@ -354,7 +342,6 @@ public class AdminController {
 		model.addAttribute("message", msg);
 		msg = "";
 		model.addAttribute("studentList", students);
-		System.out.println("全部学生集合："+students);
 		return "admin/adminStudentManage.jsp";
 	}
 	
@@ -399,19 +386,6 @@ public class AdminController {
 		major = new String(major.getBytes("iso-8859-1"),"utf-8");
 		Date currentTime = new Date();
 		
-		/*Teacher teacher = new Teacher();
-		teacher.setId(id);
-		teacher.setTeacherNo(teacherNo);
-		teacher.setTeacherName(teacherName);
-		if (major == null || "".equals(major)) {
-			teacher.setDepartmentId(departmentId);
-		}else {
-			teacher.setDepartmentId(Integer.parseInt(department));
-		}
-		teacher.setSex(sex);
-		teacher.setInputMan(inputMan);
-		teacher.setLastModifyTime(currentTime);
-		teacher.setPhone(phone);*/
 		
 		Student student = new Student();
 		student.setId(id);
@@ -429,8 +403,7 @@ public class AdminController {
 		student.setGrade(grade);
 		
 		int num = studentService.updateStudent(student);
-		
-		System.out.println("修改数目："+num);
+
 		msg = "Modify student information successfully";
 		return "redirect:/admin/showAllStudent";
 	}
@@ -439,8 +412,6 @@ public class AdminController {
 	public String adminDeleteStudent(int id,Model model) {
 		// System.out.println(id);
 		int num = studentService.deleteStudent(id);
-		//System.out.println("删除了"+num+"条数据！");
-//		model.addAttribute("message", "成功删除一条学生信息");
 		msg = "Delete student information successfully";
 		return "redirect:/admin/showAllStudent";
 	}
@@ -465,7 +436,7 @@ public class AdminController {
 				}
 			}
 			model.addAttribute("studentList", students);
-			System.out.println("学生集合："+students);
+
 			return "admin/adminStudentManage.jsp";
 		}else if(("".equals(studentNo) || studentNo == null) && (!"".equals(studentName) || studentName != null)) {
 			studentName = new String(studentName.getBytes("iso-8859-1"),"utf-8");
@@ -482,7 +453,7 @@ public class AdminController {
 				}
 			}
 			model.addAttribute("studentList", students);
-			System.out.println("学生集合："+students);
+
 			return "admin/adminStudentManage.jsp";
 		} else {
 			studentName = new String(studentName.getBytes("iso-8859-1"),"utf-8");
@@ -501,7 +472,6 @@ public class AdminController {
 			}
 			
 			model.addAttribute("studentList", students);
-			System.out.println("学生集合："+students);
 			return "admin/adminStudentManage.jsp";
 		}
 		return "admin/adminStudentManage.jsp";
@@ -512,7 +482,6 @@ public class AdminController {
 	public String agreeThesis(int id,Model model) {
 		
 		int num = teacherService.agreeThesisTitle(id);
-		System.out.println("课题已审核");
 		adminCheckThesis(model);
 		return "admin/adminCheckThesis.jsp";
 	}
@@ -521,7 +490,6 @@ public class AdminController {
 	public String disgreeThesis(int id,Model model) {
 		
 		int num = teacherService.disagreeThesisTitle(id);
-		System.out.println("课题审核不通过");
 		adminCheckThesis(model);
 		return "admin/adminCheckThesis.jsp";
 	}

@@ -3,8 +3,8 @@ package com.sa.dao;
 import com.sa.entity.ThesisInformation;
 
 /**
- * @date 2020-12-17
- * @author rcx
+ * @date 2021-05-17
+ * @author Eelin
  * 添加学生提交论文信息
  * 通过学生提交论文信息
  * 未通过学生提交论文信息

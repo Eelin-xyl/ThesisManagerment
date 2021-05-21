@@ -8,8 +8,8 @@ import com.sa.entity.Teacher;
 
 /**
  * 
- * @date 2020-12-10
- * @author rcx
+ * @date 2021-05-10
+ * @author Eelin
  * 添加教师
  * 查询教师 根据id
  * 查询所有教师信息
@@ -17,8 +17,8 @@ import com.sa.entity.Teacher;
  * 更新教师
  * 查询教师信息 根据 编号、姓名、编号和姓名
  * 
- * @date 2020-12-11
- * @author rcx
+ * @date 2021-05-11
+ * @author Eelin
  * 查询教师的信息 根据教师no
  * 
  *

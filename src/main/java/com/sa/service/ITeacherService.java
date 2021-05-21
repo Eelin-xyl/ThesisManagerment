@@ -16,7 +16,7 @@ import com.sa.entity.Topic;
 
 /**
  * 
- * @author rcx
+ * @author Eelin
  * 添加教师信息
  * 教师List
  * 删除教师信息
@@ -33,8 +33,8 @@ import com.sa.entity.Topic;
  * 显示所有的课题
  * 更改课题审核状态(审核通过 、 未通过)
  * 
- * @date 2020-12-14
- * @author rcx
+ * @date 2021-05-14
+ * @author Eelin
  * 教师查询自己上传的课题中审核通过的课题列表
  * 教师上传任务书，把文件目录保存到db中
  * 教师上传开题报告，把文件目录保存到db中
@@ -45,8 +45,8 @@ import com.sa.entity.Topic;
  * 根据文件路径获得所有信息
  * 根据课程id 把任务书或者开题报告删掉 也就是把数据库中的指设置为:""
  * 
- * @date 2020-12-15
- * @author rcx
+ * @date 2021-05-15
+ * @author Eelin
  * 根据任务书路径 或 开题报告 获得 TeacherTaskBookOpening信息
  * 根据课题id 删除任务书 或者 开题报告
  * 根据教师id 获得该教师管理的学生
@@ -55,12 +55,12 @@ import com.sa.entity.Topic;
  * 根据学生id 获得StudentTaskBookOpening信息
  * 根据学生No 审核学生上传的开题报告(1-->不通过  2--> 通过)
  * 
- * @date 2020-12-17
- * @author rcx
+ * @date 2021-05-17
+ * @author Eelin
  * 显示所有的公告信息
  * 
- * @date 2020-12-18
- * @author rcx
+ * @date 2021-05-18
+ * @author Eelin
  * 根据学生id获得学生提交的论文信息
  * 给予学生提交的论文评价-----通过、不通过
  * 添加学生成绩
@@ -69,8 +69,8 @@ import com.sa.entity.Topic;
  * 把最终论文上传  供admin查看
  * 显示所有的最终论文
  * 
- * @date 2020-12-10
- * @author rcx
+ * @date 2021-05-10
+ * @author Eelin
  * 更新疑惑信息
  * 获得指定学生下的所有疑惑
  * 

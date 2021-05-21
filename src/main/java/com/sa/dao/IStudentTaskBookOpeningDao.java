@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Param;
 import com.sa.entity.StudentTaskBookOpening;
 
 /**
+<<<<<<< Updated upstream
  * 
  * @author LaoYu
  *get student information based on student ID
@@ -13,6 +14,20 @@ import com.sa.entity.StudentTaskBookOpening;
  *reset opening report path
  *search information based on assignment
  *modify student status
+=======
+ * @date 2021-05-15
+ * @author Eelin
+ * 根据学生id 获得信息
+ * 插入信息 只添加学生id
+ * 通过学生id修改任务书路径
+ * 通过学生id修改开题报告路径
+ * 重置任务书路径
+ * 重置开题报告路径
+ * 根据任务书路径查找信息
+ * 根据开题报告路径查找信息
+ * 根据学生id 修改审核状态(1-->不通过 2--> 通过 )
+ *
+>>>>>>> Stashed changes
  */
 
 public interface IStudentTaskBookOpeningDao {
