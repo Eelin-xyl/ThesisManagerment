@@ -6,7 +6,7 @@
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <title>Topic Review</title>
-<!--             <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+            <!--             <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
         </head>
 
         <body>
@@ -39,8 +39,8 @@
                                         <td>${thesis.description }</td>
                                         <td>${thesis.statusName }</td>
                                         <td>
-                                            <a href="<c:url value=" /admin/agreeThesis?id=${thesis.id } " />">Pass</a> &nbsp;
-                                            <a href="<c:url value=" /admin/disagreeThesis?id=${thesis.id } " />">Fail</a>
+                                            <a href="<c:url value="/admin/agreeThesis?id=${thesis.id } " />">Pass</a> &nbsp;
+                                            <a href="<c:url value="/admin/disagreeThesis?id=${thesis.id } " />">Fail</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
