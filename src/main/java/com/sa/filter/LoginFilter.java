@@ -18,8 +18,8 @@ import com.sa.entity.User;
 /**
  * @date 2021-05-11
  * @author Eelin
- * 这是个过滤器 用于验证用户登陆 (查找session)
- * 把图片的路径过滤掉，否则会出现图片无法加载
+ * filter, to verify user login
+ * pass the direct of img
  * 
  *
  */
@@ -40,7 +40,7 @@ public class LoginFilter implements Filter {
 		
 		String path = servletRequest.getRequestURI();
 		
-		System.out.println("当前路径："+path);
+		System.out.println(path);
 		User currentUser = (User)session.getAttribute("currentUser");
 		if (path.indexOf("index.jsp") > -1 || path.indexOf("teacherLogin.jsp") > -1
 				|| path.indexOf("studentLogin.jsp") > -1 || path.indexOf("adminLogin.jsp") > -1

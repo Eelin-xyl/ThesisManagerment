@@ -205,16 +205,6 @@ public class TeacherServiceImpl implements ITeacherService {
 	}
 
 
-//	public int uploadOpening(TeacherTaskBookOpening teacherTaskBookOpening) {
-//		TeacherTaskBookOpening dbTTBO = teacherTaskBookOpeningDao.showInfo(teacherTaskBookOpening.getThesisTitleId());
-//		if(dbTTBO == null || "".equals(dbTTBO)) {
-//			int num = teacherTaskBookOpeningDao.addOpening(teacherTaskBookOpening);
-//			return num;
-//		}else {
-//			int num = teacherTaskBookOpeningDao.uploadOpening(teacherTaskBookOpening);
-//			return num;
-//		}
-//	}
 
 
 	public Map<String, String> uploadTaskBookOpeningResult(int teacherId) {
@@ -299,10 +289,10 @@ public class TeacherServiceImpl implements ITeacherService {
 
 	public List<Student> getAllStudentInfo(int teacherId) {
 		// TODO Auto-generated method stub
-		// thesisList2Db 为所有的信息包括未审核的和审核不通过的
+		// thesisList2Db pass and denied info
 		List<ThesisTitle> thesisList2Db = thesisTitleDao.showAllThesisTitle(teacherId);
 		
-		// thesisIdList 只是保留审核通过的信息中的课题id
+		// thesisIdList only pass
 		List<Integer> thesisIdList = new ArrayList<Integer>();
 		for(int i=0;i<thesisList2Db.size();i++) {
 			if(thesisList2Db.get(i).getStatus()==2) {
@@ -311,7 +301,7 @@ public class TeacherServiceImpl implements ITeacherService {
 			}
 		}
 		
-		// topicList 保存了学生id
+		// topicList
 		List<Integer> topicList = new ArrayList<Integer>();
 		for(int i=0;i<thesisIdList.size();i++) {
 			Topic topic = topicDao.getInfoByThesisId(thesisIdList.get(i));
@@ -395,21 +385,6 @@ public class TeacherServiceImpl implements ITeacherService {
 		
 		return s;
 	}
-
-
-//	public int passProgress(int id) {
-//		// TODO Auto-generated method stub
-//		int num = teacherProgressDao.passTeacherProgress(id);
-//		
-//		return num;
-//	}
-
-
-//	public int failProgress(int id) {
-//		// TODO Auto-generated method stub
-//		int num = teacherProgressDao.failTeacherProgress(id);
-//		return num;
-//	}
 
 	public ThesisInformation getInfoByStudentId(int studentId) {
 		// TODO Auto-generated method stub

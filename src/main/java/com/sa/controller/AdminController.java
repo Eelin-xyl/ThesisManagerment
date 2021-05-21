@@ -97,6 +97,7 @@ public class AdminController {
 		}
 		
 		model.addAttribute("thesisTitleList", thesisList);
+		System.out.println(thesisList);
 		
 		return "admin/adminCheckThesis.jsp";
 	}
@@ -131,7 +132,7 @@ public class AdminController {
 			teacher.setLastModifyTime(currentTime);
 			teacher.setPhone(phone);
 			
-			int addNum = teacherService.addTeacher(teacher);
+			teacherService.addTeacher(teacher);
 			msg = "Add teacher information successfully.";
 //			model.addAttribute("message", "Add teacher information successfully.");
 			return "redirect:/admin/showAllTeacher";
@@ -154,12 +155,15 @@ public class AdminController {
 		model.addAttribute("message", msg);
 		msg = "";
 		model.addAttribute("teacherList", teachers);
+		System.out.println(teachers);
 		return "admin/adminTeacherManage.jsp";
 	}
 	
 	@RequestMapping(value="/deleteTeacher")
 	public String adminDeleteTeacher(int id,Model model) {
 		// System.out.println(id);
+		teacherService.deleteTeacher(id);
+
 		msg = "Delete teacher information successfully";
 		return "redirect:/admin/showAllTeacher";
 	}
@@ -167,7 +171,7 @@ public class AdminController {
 	@RequestMapping(value="/modifyTeacher")
 	public String adminModifyTeacher(int id,Model model) {
 		Teacher teacher = teacherService.getTeacherByid(id);
-		System.out.println("----------------------------------1111----------------------------------");
+		
 		String teacherNo = teacher.getTeacherNo();
 		String teacherName = teacher.getTeacherName();
 		int depId = teacher.getDepartmentId();
@@ -216,6 +220,8 @@ public class AdminController {
 		teacher.setLastModifyTime(currentTime);
 		teacher.setPhone(phone);
 		
+		teacherService.updateTeacher(teacher);
+
 		msg = "Modify teacher information successfully";
 		return "redirect:/admin/showAllTeacher";
 	}
@@ -242,6 +248,7 @@ public class AdminController {
 				}
 			}
 			model.addAttribute("teacherList", teachers);
+			System.out.println(teachers);
 			return "admin/adminTeacherManage.jsp";
 			
 		}else if(("".equals(teacherNo) || teacherNo == null) && (!"".equals(teacherName) || teacherName != null)) {
@@ -260,6 +267,7 @@ public class AdminController {
 				}
 			}
 			model.addAttribute("teacherList", teachers);
+			System.out.println(teachers);
 			return "admin/adminTeacherManage.jsp";
 		} else {
 			teacherName = new String(teacherName.getBytes("iso-8859-1"),"utf-8");
@@ -279,6 +287,7 @@ public class AdminController {
 			}
 			
 			model.addAttribute("teacherList", teachers);
+			System.out.println(teachers);
 			return "admin/adminTeacherManage.jsp";
 		}
 		return "admin/adminTeacherManage.jsp";
@@ -316,12 +325,15 @@ public class AdminController {
 			student.setMajorId(Integer.parseInt(major));
 			student.setLastModifyTime(currentTime);
 			
-			int addNum = studentService.addStudent(student);
+			studentService.addStudent(student);
+
 			
 //			model.addAttribute("message", "Add student information successfully.");
 			msg = "Add student information successfully.";
 			return "redirect:/admin/showAllStudent";
 		}
+		
+		
 		
 		
 	}
@@ -339,6 +351,7 @@ public class AdminController {
 		model.addAttribute("message", msg);
 		msg = "";
 		model.addAttribute("studentList", students);
+		System.out.println(students);
 		return "admin/adminStudentManage.jsp";
 	}
 	
@@ -398,6 +411,8 @@ public class AdminController {
 		student.setLastModifyTime(currentTime);
 		student.setPhone(phone);
 		student.setGrade(grade);
+		
+		studentService.updateStudent(student);
 
 		msg = "Modify student information successfully";
 		return "redirect:/admin/showAllStudent";
@@ -406,6 +421,7 @@ public class AdminController {
 	@RequestMapping(value="/deleteStudent")
 	public String adminDeleteStudent(int id,Model model) {
 		// System.out.println(id);
+		studentService.deleteStudent(id);
 
 		msg = "Delete student information successfully";
 		return "redirect:/admin/showAllStudent";
@@ -431,7 +447,7 @@ public class AdminController {
 				}
 			}
 			model.addAttribute("studentList", students);
-
+			System.out.println(students);
 			return "admin/adminStudentManage.jsp";
 		}else if(("".equals(studentNo) || studentNo == null) && (!"".equals(studentName) || studentName != null)) {
 			studentName = new String(studentName.getBytes("iso-8859-1"),"utf-8");
@@ -448,7 +464,7 @@ public class AdminController {
 				}
 			}
 			model.addAttribute("studentList", students);
-
+			System.out.println(students);
 			return "admin/adminStudentManage.jsp";
 		} else {
 			studentName = new String(studentName.getBytes("iso-8859-1"),"utf-8");
@@ -467,6 +483,7 @@ public class AdminController {
 			}
 			
 			model.addAttribute("studentList", students);
+			System.out.println(students);
 			return "admin/adminStudentManage.jsp";
 		}
 		return "admin/adminStudentManage.jsp";
@@ -476,6 +493,8 @@ public class AdminController {
 	@RequestMapping(value="/agreeThesis")
 	public String agreeThesis(int id,Model model) {
 		
+		teacherService.agreeThesisTitle(id);
+		System.out.println("pass");
 		adminCheckThesis(model);
 		return "admin/adminCheckThesis.jsp";
 	}
@@ -483,6 +502,8 @@ public class AdminController {
 	@RequestMapping(value="/disagreeThesis")
 	public String disgreeThesis(int id,Model model) {
 		
+		teacherService.disagreeThesisTitle(id);
+		System.out.println("disagree");
 		adminCheckThesis(model);
 		return "admin/adminCheckThesis.jsp";
 	}
