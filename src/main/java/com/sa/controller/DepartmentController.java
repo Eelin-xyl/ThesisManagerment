@@ -19,7 +19,7 @@ import net.sf.json.JSONArray;
  * 
  * @author Eelin
  * 
- * showAllDep() 显示所以院系信息
+ * showAllDep() show all department info
  *
  */
 

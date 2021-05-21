@@ -8,9 +8,9 @@ import com.sa.entity.Department;
  * 
  * @author Eelin
  * 
- * 显示院系列表
- * 根据id获得院系name
- * 根据name获得院系id
+ * show department list
+ * get department name by ID
+ * get department ID by name
  * 
  *
  */

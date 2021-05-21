@@ -19,7 +19,7 @@ import net.sf.json.JSONArray;
  * 
  * @author Eelin
  * 
- * showAllMajor() 获得所有专业信息
+ * showAllMajor() show all major info
  *
  */
 
