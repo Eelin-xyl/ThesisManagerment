@@ -8,7 +8,7 @@
             <title>Teacher Search</title>
             <!-- <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
 
-            <script type="text/javascript" src="${pageContext.request.contextPath}/js/autoJump.js"></script>
+<%--             <script type="text/javascript" src="${pageContext.request.contextPath}/js/autoJump.js"></script> --%>
         </head>
 
         <body>

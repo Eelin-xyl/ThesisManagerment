@@ -33,7 +33,7 @@
                                     <td>${student.studentName }</td>
                                     <td>${student.thesisScore }</td>
                                     <td>
-                                        <a href="<c:url value=" /teacher/modifyStudentScore?id=${student.id } " />">Modify</a>
+                                        <a href="<c:url value="/teacher/modifyStudentScore?id=${student.id } " />">Modify</a>
                                     </td>
                                 </tr>
                             </c:forEach>

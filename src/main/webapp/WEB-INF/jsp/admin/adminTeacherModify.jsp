@@ -37,7 +37,7 @@
                             <label class="col-sm-2 control-label">Sex:</label>
                             <div class="col-sm-10">
                                 <select class="form-control" id="sex" name="sex">
-									<option value="${sex }"> ${sex }</option>
+                                	<option selected style="display: none" value="${sex }">${sex }</option>
 									<option value="Male">Male</option>
 									<option value="Female">Female</option>
 								</select>
