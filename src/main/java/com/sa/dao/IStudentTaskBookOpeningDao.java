@@ -24,9 +24,7 @@ public interface IStudentTaskBookOpeningDao {
 //	int uploadTaskBook(@Param("studentId") int studentId,@Param("studentTaskBook") String studentTaskBook);
 	
 	int uploadOpening(@Param("studentId") int studentId,@Param("studentOpeningResport") String studentOpeningResport);
-	
-//	int resetTaskBook(int studentId);
-	
+		
 	int resetOpening(int studentId);
 	
 	StudentTaskBookOpening getInfoByTaskBookPath(String studentTaskBook);

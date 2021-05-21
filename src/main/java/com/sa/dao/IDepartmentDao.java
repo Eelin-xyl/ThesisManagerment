@@ -5,12 +5,9 @@ import java.util.List;
 import com.sa.entity.Department;
 
 /**
- * @date 2021-05-10
- * @author Eelin
- * 查询全部的院系
- * id ==> name
- * name ==> id
  * 
+ * @author LaoYu
+ *search all department
  */
 public interface IDepartmentDao {
 	

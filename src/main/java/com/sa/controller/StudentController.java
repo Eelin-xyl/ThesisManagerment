@@ -55,44 +55,6 @@ public class StudentController {
 	@Autowired
 	private ITeacherService teacherService;
 	
-//	@RequestMapping(value="/add",method=RequestMethod.GET)
-//	public String addStudentForm() {
-//		return "student/addStudent.jsp";
-//	}
-//	
-	
-	// 已废除
-//	@RequestMapping(value="/add",method=RequestMethod.POST)
-//	public String addStudent(HttpServletRequest request,String studentNo, String studentName,String sex,String grade ,String inputMan,String phone,String major,Model model) throws Exception {
-//		studentNo = new String(studentNo.getBytes("iso-8859-1"),"utf-8");
-//		studentName = new String(studentName.getBytes("iso-8859-1"),"utf-8");
-//		sex = new String(sex.getBytes("iso-8859-1"),"utf-8");
-//		grade = new String(grade.getBytes("iso-8859-1"),"utf-8");
-//		inputMan = new String(inputMan.getBytes("iso-8859-1"),"utf-8");
-//		phone = new String(phone.getBytes("iso-8859-1"),"utf-8");
-//		major = new String(major.getBytes("iso-8859-1"),"utf-8");
-//		Date currentTime = new Date();
-//		
-//		Student student = new Student();
-//		student.setStudentNo(studentNo);
-//		student.setStudentName(studentName);
-//		student.setSex(sex);
-//		student.setGrade(grade);
-//		student.setInputMan(inputMan);
-//		student.setPhone(phone);
-//		student.setMajorId(Integer.parseInt(major));
-//		student.setLastModifyTime(currentTime);
-//		
-//		int addNum = studentService.addStudent(student);
-//		System.out.println("添加数目："+addNum);
-//		
-//		return "student/addSuccess.jsp";
-//	}
-	
-//	@RequestMapping(value="/info",method=RequestMethod.GET)
-//	public String studentInfo() {
-//		return "student/studentPersionalInformation.jsp";
-//	}
 	
 	@RequestMapping(value="/main",method=RequestMethod.GET)
 	public String studentMainForm() {
@@ -161,12 +123,10 @@ public class StudentController {
 			if(ttbo==null || "".equals(ttbo)) {
 				return "student/studentViewTaskBookAndOpening.jsp";
 			}else {
-				// 获得数据库中的文件目录；
 				String taskBookPath = ttbo.getTaskBook();
 				
 				//get opening report path
-//				String openingPath = ttbo.getOpeningReport();
-//				
+//				String openingPath = ttbo.getOpeningReport();			
 				Map<String, String> fileList = new HashMap<String, String>();
 
 				if(taskBookPath == null || "".equals(taskBookPath)) {
@@ -201,17 +161,6 @@ public class StudentController {
 		
 		List<TeacherProgress> progresses = studentService.getTeacherProgressByStudentId(studentId);
 		
-		
-//		for(int i=0;i<progresses.size();i++) {
-//			int state = progresses.get(i).getState();
-//			if(state ==0) {
-//				progresses.get(i).setStateName("教师还未查看");
-//			}else if(state ==1) {
-//				progresses.get(i).setStateName("未通过");
-//			}else {
-//				progresses.get(i).setStateName("已通过");
-//			}
-//		}
 		model.addAttribute("progressList", progresses);
 		return "student/studentSectionTask.jsp";
 	}
@@ -279,7 +228,6 @@ public class StudentController {
 		// Update student information
 		int majorId = 0;
 		majorOld = new String(majorOld.getBytes("iso-8859-1"),"utf-8");
-		//departmentId =  departmentService.getIdByName(departmentOld);
 		majorId = majorService.getIdByName(majorOld);
 		studentNo = new String(studentNo.getBytes("iso-8859-1"),"utf-8");
 		studentName = new String(studentName.getBytes("iso-8859-1"),"utf-8");
@@ -307,9 +255,9 @@ public class StudentController {
 		student.setInputMan(inputMan);
 		student.setLastModifyTime(currentTime);
 		student.setPhone(phone);
-		
-		int num = studentService.updateStudent(student);
-		System.out.println("Change the num of student："+num);
+
+//		int num = studentService.updateStudent(student);
+//		System.out.println("Change the num of student："+num);
 		
 		// get department based on major
 		int majId = student.getMajorId();
@@ -336,16 +284,11 @@ public class StudentController {
 	@RequestMapping(value="/selectTopic")
 	public String studentSelectTopic(HttpServletResponse response,HttpServletRequest request,Model model,int id,int topic) throws Exception {
 		
-		/*System.out.println("id:"+id);
-		System.out.println("topic:"+topic);*/
 		Topic top = new Topic();
 		top.setStudentId(id);
 		top.setThesisId(topic);
 		Date time = new Date();
 		top.setSelectTime(time);
-		
-		//int num = studentService.addTopicToDb(top);
-		//System.out.println("添加了"+num+"个选题");
 		
 		Student student = studentService.getStudentNameById(id);
 		String studentNo = student.getStudentNo();
@@ -353,30 +296,9 @@ public class StudentController {
 		ThesisTitle thesis = studentService.getThesisInfoByid(topic);
 		String thesisName = thesis.getThesisName();
 		
-		
-//		StringBuffer sb = new StringBuffer();
-//		sb.append("学号为");
-//		sb.append(studentNo);
-//		sb.append("的学生，选择了");
-//		sb.append(thesisName);
-		
 		studentThesisResult(response, request, model);
 		return "student/studentThesisResult.jsp";
 	}
-	
-	/*
-	 * @RequestMapping(value="/deleteChosenTopic") public String
-	 * studentDeleteChosenTopic(Model model,int studentId) throws Exception {
-	 * 
-	 * // System.out.println(studentId); StudentTaskBookOpening stbo =
-	 * studentService.getSTBOInfoById(studentId); if(stbo==null||"".equals(stbo)) {
-	 * int num = studentService.deleteTopic(studentId);
-	 * System.out.println("成功退选 :"+num+"条数据"); model.addAttribute("message",
-	 * "成功退选");
-	 * 
-	 * return "student/main.jsp"; }else { model.addAttribute("message",
-	 * "已上传开题报告，不可退选"); return "student/main.jsp"; } }
-	 */
 	
 	@RequestMapping(value="/fileDownload")
 	public ResponseEntity<byte[]> fileDownload(HttpServletRequest request, @RequestParam("filePath") String filePath,@RequestParam("fileName") String fileName, Model model) throws Exception {
@@ -389,38 +311,6 @@ public class StudentController {
 		headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
 		return new ResponseEntity<byte[]>(FileUtils.readFileToByteArray(file),headers,HttpStatus.CREATED); 
 	}
-	
-	// @RequestMapping(value="/uploadTaskBook")
-	// public String studentUploadTaskBook(HttpServletRequest request, Model model,@RequestParam("file") MultipartFile file) throws Exception {
-		
-	// 	Student currentUser = (Student)request.getSession().getAttribute("student");
-	// 	int studentId = currentUser.getId();
-		
-	// 	String studentIdToString = String.valueOf(studentId);
-		
-	// 	if(!file.isEmpty()) {
-			
-	// 		File fileRoot = new File("E:\\ThesisManagement\\student");
-	// 		File fileDb = new File(fileRoot, studentIdToString);
-	// 		String fileName = file.getOriginalFilename();
-			
-	// 		File filePath = new File(fileDb, fileName);
-			
-	// 		if(!filePath.getParentFile().exists()) {
-	// 			filePath.getParentFile().mkdirs();
-	// 		}
-			
-	// 		file.transferTo(new File(fileDb+File.separator+fileName));
-			
-	// 		int num = studentService.uploadTaskBook(studentId, filePath.toString());
-	// 		System.out.println("添加了"+num+"条信息");
-	// 		model.addAttribute("message", "上传任务书成功");
-	// 		return "student/main.jsp";
-	// 	}else {
-	// 		model.addAttribute("message", "上传任务书出错");
-	// 		return "error.jsp";
-	// 	}
-	// }
 	
 	@RequestMapping(value="/uploadOpening")
 	public String studentUploadOpening(HttpServletRequest request, Model model,@RequestParam("file") MultipartFile file) throws Exception {
@@ -448,9 +338,6 @@ public class StudentController {
 				}
 				
 				file.transferTo(new File(fileDb+File.separator+fileName));
-				
-//				int num = studentService.uploadOpening(studentId, filePath.toString());
-//				System.out.println("添加了"+num+"条信息");
 				
 				model.addAttribute("message", "Upload successfully");
 				return "student/main.jsp";
@@ -492,15 +379,6 @@ public class StudentController {
 			int num1 = studentService.deleteThesisInformation(studentId);
 			System.out.println("Delete thesis successfully");
 		}
-		
-//		StudentTaskBookOpening STBO = studentService.getInfoByTaskBookPath(filePath);
-//		if(STBO == null || "".equals(STBO)) {
-//			
-//		} 
-//			 else { int num = studentService.resetTaskBook(studentId);
-//			 System.out.println("成功删除任务书"); }
-//			 
-		
 		StudentTaskBookOpening STBO2 = studentService.getInfoByOpeningPath(filePath);
 		if(STBO2==null || "".equals(STBO2) ) {
 			
@@ -570,9 +448,6 @@ public class StudentController {
 						}
 						
 						file.transferTo(new File(fileDb+File.separator+fileName));
-						
-//						int num = studentService.uploadThesisInformation(studentId, filePath.toString());
-//						System.out.println("添加了"+num+"条信息");
 						
 						model.addAttribute("message", "Upload thesis successfully.");
 						return "student/main.jsp";

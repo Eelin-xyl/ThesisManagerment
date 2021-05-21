@@ -15,6 +15,7 @@ import com.sa.entity.Student;
  *show student information based on student name
  *show all student
  */
+
 public interface IStudentDao {
 	Student selectStudent(int id);
 	int addStudent(Student student);
