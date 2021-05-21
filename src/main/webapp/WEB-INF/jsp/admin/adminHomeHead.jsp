@@ -41,14 +41,13 @@
 
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Teacher
-                                Management</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Teacher Management</a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a href="${pageContext.request.contextPath}/admin/teacherAdd">Teacher Add</a>
                                 </li>
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/admin/showAllTeacher">Teacher Search</a>
+                                    <a href="${pageContext.request.contextPath}/admin/showAllTeacher">Teacher List</a>
                                 </li>
                             </ul>
                         </li>
@@ -56,14 +55,13 @@
 
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Student
-                                Management</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Student Management</a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <a href="${pageContext.request.contextPath}/admin/studentAdd">Student Add</a>
                                 </li>
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/admin/showAllStudent">Student Search</a>
+                                    <a href="${pageContext.request.contextPath}/admin/showAllStudent">Student List</a>
                                 </li>
                             </ul>
                         </li>
