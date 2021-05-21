@@ -174,15 +174,15 @@ public class StudentServiceImpl implements IStudentService{
 	}
 
 
-	public int uploadTaskBook(int studentId, String filePath) {
-		// TODO Auto-generated method stub
-		StudentTaskBookOpening dbInfo = studentTaskBookOpeningDao.showInfoByStudentId(studentId);
-		if(dbInfo == null || "".equals(dbInfo)) {
-			studentTaskBookOpeningDao.addInfoByStudentId(studentId);
-		}
-		int num = studentTaskBookOpeningDao.uploadTaskBook(studentId, filePath);
-		return num;
-	}
+//	public int uploadTaskBook(int studentId, String filePath) {
+//		// TODO Auto-generated method stub
+//		StudentTaskBookOpening dbInfo = studentTaskBookOpeningDao.showInfoByStudentId(studentId);
+//		if(dbInfo == null || "".equals(dbInfo)) {
+//			studentTaskBookOpeningDao.addInfoByStudentId(studentId);
+//		}
+//		int num = studentTaskBookOpeningDao.uploadTaskBook(studentId, filePath);
+//		return num;
+//	}
 
 
 	public int uploadOpening(int studentId, String filePath) {
