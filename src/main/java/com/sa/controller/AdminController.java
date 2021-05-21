@@ -173,7 +173,7 @@ public class AdminController {
 	@RequestMapping(value="/modifyTeacher")
 	public String adminModifyTeacher(int id,Model model) {
 		Teacher teacher = teacherService.getTeacherByid(id);
-		
+		System.out.println("----------------------------------1111----------------------------------");
 		String teacherNo = teacher.getTeacherNo();
 		String teacherName = teacher.getTeacherName();
 		int depId = teacher.getDepartmentId();

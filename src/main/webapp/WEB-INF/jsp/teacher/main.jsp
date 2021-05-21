@@ -23,7 +23,9 @@
                     <!-- 					<li>Teacher Information</li> -->
                     <!-- 				</ul> -->
                     <br></br>
-
+					<ul class="list-inline">
+                        <li>Teacher Information</li>
+                    </ul>
                     <p>
                         <font color="red" size="4px">${deleteMessage }</font>
                     </p>

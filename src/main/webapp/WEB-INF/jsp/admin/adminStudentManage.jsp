@@ -78,16 +78,16 @@
                             <tbody>
                                 <c:forEach items="${studentList }" var="student" varStatus="loop">
                                     <tr>
-                                        <th>${student.studentNo }</th>
-                                        <th>${student.studentName }</th>
-                                        <th>${student.sex }</th>
-                                        <th>${student.majorName }</th>
-                                        <th>${student.grade }</th>
-                                        <th>${student.phone }</th>
-                                        <th>
-                                            <a href="<c:url value=" /admin/modifyStudent?id=${student.id } " />">Modify</a>
-                                            <a href="<c:url value=" /admin/deleteStudent?id=${student.id } " />">Delete</a>
-                                        </th>
+                                        <td>${student.studentNo }</td>
+                                        <td>${student.studentName }</td>
+                                        <td>${student.sex }</td>
+                                        <td>${student.majorName }</td>
+                                        <td>${student.grade }</td>
+                                        <td>${student.phone }</td>
+                                        <td>
+                                            <a href="<c:url value="/admin/modifyStudent?id=${student.id } " />">Modify</a>
+                                            <a href="<c:url value="/admin/deleteStudent?id=${student.id } " />">Delete</a>
+                                        </td>
                                     </tr>
                                 </c:forEach>
                             </tbody>

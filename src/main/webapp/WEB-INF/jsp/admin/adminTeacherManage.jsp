@@ -8,7 +8,7 @@
             <title>Teacher Search</title>
             <!-- <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
 
-            <script type="text/javascript" src="${pageContext.request.contextPath}/js/autoJump.js"></script>
+<%--             <script type="text/javascript" src="${pageContext.request.contextPath}/js/autoJump.js"></script> --%>
         </head>
 
         <body>
@@ -80,8 +80,8 @@
                                         <td>${teacher.sex }</td>
                                         <td>${teacher.phone }</td>
                                         <td>
-                                            <a href="<c:url value=" /admin/modifyTeacher?id=${teacher.id } " />">Modify</a>
-                                            <a href="<c:url value=" /admin/deleteTeacher?id=${teacher.id } " />">Delete</a>
+                                            <a href="<c:url value="/admin/modifyTeacher?id=${teacher.id } " />">Modify</a>
+                                            <a href="<c:url value="/admin/deleteTeacher?id=${teacher.id } " />">Delete</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
