@@ -160,7 +160,6 @@ public class AdminController {
 	@RequestMapping(value="/deleteTeacher")
 	public String adminDeleteTeacher(int id,Model model) {
 		// System.out.println(id);
-		int num = teacherService.deleteTeacher(id);
 		msg = "Delete teacher information successfully";
 		return "redirect:/admin/showAllTeacher";
 	}
@@ -217,8 +216,6 @@ public class AdminController {
 		teacher.setLastModifyTime(currentTime);
 		teacher.setPhone(phone);
 		
-		int num = teacherService.updateTeacher(teacher);
-		System.out.println("修改数目："+num);
 		msg = "Modify teacher information successfully";
 		return "redirect:/admin/showAllTeacher";
 	}
@@ -401,8 +398,6 @@ public class AdminController {
 		student.setLastModifyTime(currentTime);
 		student.setPhone(phone);
 		student.setGrade(grade);
-		
-		int num = studentService.updateStudent(student);
 
 		msg = "Modify student information successfully";
 		return "redirect:/admin/showAllStudent";
@@ -411,7 +406,7 @@ public class AdminController {
 	@RequestMapping(value="/deleteStudent")
 	public String adminDeleteStudent(int id,Model model) {
 		// System.out.println(id);
-		int num = studentService.deleteStudent(id);
+
 		msg = "Delete student information successfully";
 		return "redirect:/admin/showAllStudent";
 	}
@@ -481,7 +476,6 @@ public class AdminController {
 	@RequestMapping(value="/agreeThesis")
 	public String agreeThesis(int id,Model model) {
 		
-		int num = teacherService.agreeThesisTitle(id);
 		adminCheckThesis(model);
 		return "admin/adminCheckThesis.jsp";
 	}
@@ -489,7 +483,6 @@ public class AdminController {
 	@RequestMapping(value="/disagreeThesis")
 	public String disgreeThesis(int id,Model model) {
 		
-		int num = teacherService.disagreeThesisTitle(id);
 		adminCheckThesis(model);
 		return "admin/adminCheckThesis.jsp";
 	}

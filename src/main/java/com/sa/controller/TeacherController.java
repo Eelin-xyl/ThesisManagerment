@@ -56,38 +56,7 @@ public class TeacherController {
 	
 	@Autowired
 	private IDepartmentService departmentService;
-	
-	
-	/*@RequestMapping(value="/add",method=RequestMethod.GET)
-	public String addTeacherForm(Model model) {
-		return "teacher/addTeacher.jsp";
-	}
-	
-	@RequestMapping(value="/add",method=RequestMethod.POST)
-	public String addTeacher(HttpServletRequest request,String teacherNo, String teacherName,String sex,String inputMan,String phone,String department,Model model) throws Exception {
-		teacherNo = new String(teacherNo.getBytes("iso-8859-1"),"utf-8");
-		teacherName = new String(teacherName.getBytes("iso-8859-1"),"utf-8");
-		sex = new String(sex.getBytes("iso-8859-1"),"utf-8");
-		inputMan = new String(inputMan.getBytes("iso-8859-1"),"utf-8");
-		phone = new String(phone.getBytes("iso-8859-1"),"utf-8");
-		department = new String(department.getBytes("iso-8859-1"),"utf-8");
-		
-		Date currentTime = new Date();
-		
-		Teacher teacher = new Teacher();
-		teacher.setTeacherNo(teacherNo);
-		teacher.setTeacherName(teacherName);
-		teacher.setDepartmentId(Integer.parseInt(department));
-		teacher.setSex(sex);
-		teacher.setInputMan(inputMan);
-		teacher.setLastModifyTime(currentTime);
-		teacher.setPhone(phone);
-		
-		int addNum = teacherService.addTeacher(teacher);
-		System.out.println("添加数目："+addNum);
-		
-		return "teacher/addSuccess.jsp";
-	}*/
+
 	
 	@RequestMapping(value="/main",method=RequestMethod.GET)
 	public String teacherMainForm() {
@@ -126,10 +95,6 @@ public class TeacherController {
 		return "teacher/teacherUploadTakeBook.jsp";
 	}
 
-//	@RequestMapping(value="/uploadOpening",method=RequestMethod.GET)
-//	public String teacherUploadOpeningForm() {
-//		return "teacher/teacherUploadOpeningReport.jsp";
-//	}
 
 	@RequestMapping(value="/checkOppening")
 	public String teacherCheckOppeningForm(HttpServletRequest request,Model model) {
@@ -304,7 +269,7 @@ public class TeacherController {
 	@RequestMapping(value="/modifyInfoToDb",method=RequestMethod.POST)
 	public String teacherModifyInfoToDb(Model model,HttpServletRequest request,int id,String teacherNo, String departmentOld, String teacherName,String sex,String phone,String department) throws Exception {
 		
-		// 以下代码是教师修改教师信息的代码
+		// modify teacher info
 		int departmentId = 0;
 		departmentOld = new String(departmentOld.getBytes("iso-8859-1"),"utf-8");
 		departmentId =  departmentService.getIdByName(departmentOld);
@@ -332,10 +297,7 @@ public class TeacherController {
 		teacher.setLastModifyTime(currentTime);
 		teacher.setPhone(phone);
 		
-		int num = teacherService.updateTeacher(teacher);
-		System.out.println("修改数目："+num);
-		
-		// 根据 院系id 获得院系name
+		// get department name by id
 		int depId = teacher.getDepartmentId();
 		String depName = departmentService.getNameById(depId);
 		teacher.setDepartmentName(depName);
@@ -370,9 +332,6 @@ public class TeacherController {
 			thesis.setInputMan(teacherName);
 			thesis.setDescription(thesisDesc);
 			
-			int num = teacherService.uploadThesisTitle(thesis);
-			System.out.println("添加的课题数："+num);
-			
 			model.addAttribute("message", "Upload successfully.");
 			return "teacher/teacherUploadThesisTitle.jsp";
 		}
@@ -397,7 +356,6 @@ public class TeacherController {
 		}
 		
 		model.addAttribute("thesisTitleList", thesisList);
-		System.out.println("查询到该教师的课题有："+thesisList);
 		
 		return "teacher/teacherThesisResult.jsp";
 	}
@@ -410,7 +368,7 @@ public class TeacherController {
 			teacherThesisResultForm(model, request);
 			return "teacher/teacherThesisResult.jsp";
 		}else {
-			System.out.println("thesisTitle是："+thesisTitle);
+			System.out.println("thesisTitle:"+thesisTitle);
 			model.addAttribute("id", thesisTitle.getId());
 			model.addAttribute("thesisTitleName", thesisTitle.getThesisName());
 			model.addAttribute("thesisTitleDesc", thesisTitle.getDescription());
@@ -437,8 +395,6 @@ public class TeacherController {
 		thesis.setInputMan(teacherName);
 		thesis.setDescription(thesisDesc);
 		
-		int num = teacherService.updateThesisTitle(thesis);
-		System.out.println("修改了："+num+"条数据。");
 		
 		teacherThesisResultForm(model, request);
 		
@@ -454,8 +410,7 @@ public class TeacherController {
 			teacherThesisResultForm(model, request);
 			return "teacher/teacherThesisResult.jsp";
 		}else {
-			int num = teacherService.deleteThesisTitle(id);
-			System.out.println("删除了"+num+"条数据");
+			
 			teacherThesisResultForm(model, request);
 			return "teacher/teacherThesisResult.jsp";
 		}
@@ -464,12 +419,6 @@ public class TeacherController {
 	@RequestMapping(value="/getAllAvailableTopic")
 	public void teacherGetAllAvailableTopicForm(HttpServletResponse response,HttpServletRequest request) throws Exception {
 		
-		/*List<ThesisTitle> thesisList = studentService.availableTopic();
-		JSONArray json =  JSONArray.fromObject(thesisList);
-		response.setContentType("text/html;charset=UTF-8");
-		PrintWriter write = response.getWriter();
-		write.write(json.toString());
-		write.close();*/
 		Teacher currentTeacher = (Teacher)request.getSession().getAttribute("teacher");
 		int teacherId = currentTeacher.getId();
 		
@@ -484,7 +433,6 @@ public class TeacherController {
 	@RequestMapping(value="/uploadTaskBook")
 	public String teacherUploadTaskBook(HttpServletRequest request,@RequestParam(value="topic4Teacher",required=false) int topic4Teacher,@RequestParam("file1") MultipartFile file1, Model model) throws Exception, IOException {
 		
-		// System.out.println("上传课题id:"+topic4Teacher);
 		if(topic4Teacher == 0) {
 			model.addAttribute("message", "Failed to upload assignment.");
 			return "teacher/main.jsp";
@@ -493,7 +441,7 @@ public class TeacherController {
 			int teacherId = currentTeacher.getId();
 			String teacherIdString = String.valueOf(teacherId);
 			String thesisTitleString = String.valueOf(topic4Teacher);
-			// System.out.println("当前用户："+teacherNo);
+			
 			if(!file1.isEmpty()) {
 				
 				File fileRoot = new File("E:\\ThesisManagement\\teacher");
@@ -503,7 +451,6 @@ public class TeacherController {
 				
 				File filePath = new File(fileDb, fileName);
 				
-				// filePath 是必须的 , 文件保存的路径，若是注释掉会出现，空文件异常
 				if(!filePath.getParentFile().exists()) {
 					filePath.getParentFile().mkdirs();
 				}
@@ -514,8 +461,7 @@ public class TeacherController {
 				teacherTaskBookOpening.setTeacherId(teacherId);
 				teacherTaskBookOpening.setTaskBook(filePath.toString());
 				teacherTaskBookOpening.setThesisTitleId(topic4Teacher);
-				int num = teacherService.uploadTaskBook(teacherTaskBookOpening);
-				System.out.println("添加了"+num+"条信息，是课题id为 "+topic4Teacher+"的任务书");
+	
 				model.addAttribute("message", "Upload assignment successfully.");
 				return "teacher/main.jsp";
 			}else {
@@ -530,58 +476,6 @@ public class TeacherController {
 		
 	}
 	
-	
-//	@RequestMapping(value="/uploadOpening")
-//	public String teacherUploadOpening(HttpServletRequest request,int topic4Teacher,@RequestParam("file1") MultipartFile file1, Model model) throws Exception, IOException {
-//		
-//		// System.out.println("上传课题id:"+topic4Teacher);
-//		
-//		if(topic4Teacher == 0) {
-//			model.addAttribute("message", "上传开题报告出错");
-//			return "teacher/main.jsp";
-//		}else {
-//			Teacher currentTeacher = (Teacher)request.getSession().getAttribute("teacher");
-//			int teacherId = currentTeacher.getId();
-//			String teacherIdString = String.valueOf(teacherId);
-//			String thesisTitleString = String.valueOf(topic4Teacher);
-//			// System.out.println("当前用户："+teacherNo);
-//			
-//			if(!file1.isEmpty()) {
-//				
-//				File fileRoot = new File("E:\\ThesisManagement\\teacher");
-//				File fileDb1 = new File(fileRoot, teacherIdString);
-//				File fileDb = new File(fileDb1,thesisTitleString);
-//				String fileName = file1.getOriginalFilename();
-//				
-//				File filePath = new File(fileDb, fileName);
-//				
-//				// filePath 是必须的 , 文件保存的路径，若是注释掉会出现，空文件异常
-//				if(!filePath.getParentFile().exists()) {
-//					filePath.getParentFile().mkdirs();
-//				}
-//				
-//				file1.transferTo(new File(fileDb+File.separator+fileName));
-//				
-//				TeacherTaskBookOpening teacherTaskBookOpening = new TeacherTaskBookOpening();
-//				teacherTaskBookOpening.setTeacherId(teacherId);
-//				teacherTaskBookOpening.setOpeningReport(filePath.toString());
-//				teacherTaskBookOpening.setThesisTitleId(topic4Teacher);
-//				//int num = teacherService.uploadTaskBook(teacherTaskBookOpening);
-//				int num = teacherService.uploadOpening(teacherTaskBookOpening);
-//				System.out.println("添加了"+num+"条信息，是课题id为 "+topic4Teacher+"的开题报告");
-//				model.addAttribute("message", "成功上传开题报告");
-//				return "teacher/main.jsp";
-//			}else {
-//				model.addAttribute("message", "上传开题报告出错");
-//				return "teacher/main.jsp";
-//			}
-//			
-//			
-//		}
-//		
-		
-		
-//	}
 	
 	@RequestMapping(value="/uploadFileResult",method=RequestMethod.GET)
 	public String teacherUploadFileResult(HttpServletRequest request,Model model) {
@@ -618,13 +512,13 @@ public class TeacherController {
 		if(deleteFile.exists()) {
 			flag = deleteFile.delete();
 			if(flag ) {
-				message = "删除成功";
+				message = "delete successfully";
 			}else {
-				message = "删除失败";
+				message = "delete unsuccessfully";
 			}
 			
 		}else {
-			message = "文件不存在";
+			message = "file does not exist";
 		}
 		
 		String thesisTitleId = teacherService.getThesisTitleByFilePath(filePath);
@@ -636,44 +530,32 @@ public class TeacherController {
 			
 		}else {
 			dbThesisId = TTBO1.getThesisTitleId();
-			int num = teacherService.resetTask(dbThesisId);
-			System.out.println("成功把task置为null:"+num+"条");
 		}
 		
 		if(TTBO2 ==null || "".equals(TTBO2)) {
 			
 		}else {
 			dbThesisId = TTBO2.getThesisTitleId();
-			int num = teacherService.resetOpening(dbThesisId);
-			System.out.println("成功把Opening置为null:"+num+"条");
 			
 		}
 		TeacherTaskBookOpening tt = teacherService.getTaskOpeningByThesisId(thesisId);
 		
-		
-		if((tt.getOpeningReport()==null || "".equals(tt.getOpeningReport())) &&(tt.getTaskBook()==null || "".equals(tt.getTaskBook())) ) {
-			int num = teacherService.deleteTaskBookOpening(thesisId);
-			System.out.println("成功删除了整行数据:"+num+"条");
-		}
-		
-		model.addAttribute("deleteMessage", "成功删除一个文档");
+		model.addAttribute("deleteMessage", "delete successfully");
 	
 		return "teacher/main.jsp";
 	}
 	@RequestMapping(value="/openingPass")
 	public String teacherOpeningPass(HttpServletRequest request, @RequestParam("studentNo") String studentNo,@RequestParam("filePath") String filePath,@RequestParam("fileName") String fileName, Model model) {
-		int num = teacherService.passOpening(studentNo);
-		System.out.println("成功修改了"+num+"条数据");
-		model.addAttribute("message", "通过审核");
+		
+		model.addAttribute("message", "pass");
 		teacherCheckOppeningForm(request, model);
 		return "teacher/teacherCheckOpeningReport.jsp";
 	}
 	
 	@RequestMapping(value="/openingFail")
 	public String teacherOpeningFail(HttpServletRequest request, @RequestParam("studentNo") String studentNo,@RequestParam("filePath") String filePath,@RequestParam("fileName") String fileName, Model model) {
-		int num = teacherService.failOpening(studentNo);
-		System.out.println("成功修改了"+num+"条数据");
-		model.addAttribute("message", "审核不通过");
+
+		model.addAttribute("message", "fail");
 		teacherCheckOppeningForm(request, model);
 		return "teacher/teacherCheckOpeningReport.jsp";
 	}
@@ -706,40 +588,21 @@ public class TeacherController {
 		teacherProgress.setStudentId(studentId);
 		teacherProgress.setTeacherId(teacherId);
 		
-		int num = teacherService.addTeacherProgress(teacherProgress);
-		System.out.println("添加任务通知"+num+"条");
 		model.addAttribute("message", "Publish notification successfully");
 		return "teacher/main.jsp";
 	}
 	
-//	@RequestMapping(value="/passProgress")
-//	public String teacherPassProgress(HttpServletRequest request, @RequestParam("progressId") int progressId,Model model) throws IOException {
-//		int num = teacherService.passProgress(progressId);
-//		System.out.println("审核阶段任务通过："+num);
-//		teacherCheckProgressForm(request, model);
-//		return "teacher/teacherCheckProgressNotification.jsp";
-//	}
-	
-//	@RequestMapping(value="/failProgress")
-//	public String teacherFailProgress(HttpServletRequest request, @RequestParam("progressId") int progressId,Model model) throws IOException {
-//		int num = teacherService.failProgress(progressId);
-//		System.out.println("审核阶段任务未通过："+num);
-//		teacherCheckProgressForm(request, model);
-//		return "teacher/teacherCheckProgressNotification.jsp";
-//	}
 	
 	@RequestMapping(value="/passThesisInfo")
 	public String teacherPassThesisInfo(HttpServletRequest request, @RequestParam("studentId") int studentId,Model model) throws IOException {
-		int num = teacherService.passThesisInformation(studentId);
-		System.out.println("审核论文通过："+num);
+
 		teacherCheckThesisForm(request, model);
 		return "teacher/teacherCheckThesis.jsp";
 	}
 	
 	@RequestMapping(value="/failThesisInfo")
 	public String teacherFailThesisInfo(HttpServletRequest request, @RequestParam("studentId") int studentId,Model model) throws IOException {
-		int num = teacherService.failThesisInformation(studentId);
-		System.out.println("审核论文未通过："+num);
+
 		teacherCheckThesisForm(request, model);
 		return "teacher/teacherCheckThesis.jsp";
 	}
@@ -781,9 +644,6 @@ public class TeacherController {
 			studentScore.setThesisResult(score);
 			studentScore.setInputMan(teacherName);
 			
-			
-			int num = teacherService.addStudentScore(studentScore);
-			System.out.println("添加"+num+"条学生成绩");
 			model.addAttribute("message", "Add successfully");
 			
 			return "teacher/main.jsp";
@@ -804,7 +664,7 @@ public class TeacherController {
 	}
 	
 	
-	
+
 	
 	@RequestMapping(value="/modifyStudentScoreToDb")
 	public String teacherModifyStudentScoreToDb(HttpServletRequest request, @RequestParam("id") int id,@RequestParam("studentScoreNew") int studentScoreNew,Model model) throws IOException {
