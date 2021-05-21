@@ -3,16 +3,12 @@ package com.sa.dao;
 import com.sa.entity.ThesisInformation;
 
 /**
- * @date 2020-12-17
- * @author rcx
- * 添加学生提交论文信息
- * 通过学生提交论文信息
- * 未通过学生提交论文信息
- * 删除学生提交论文信息
- * 根据学生id查找学生论文信息
- * 根据论文path查找学生论文信息
- *
+ * 
+ * @author LaoYu
+ *add, search, delete student_thesis_information
+ *search thesis_student_upload based on path and student id
  */
+
 public interface IThesisInformationDao {
 	
 	int addThesisInformation(ThesisInformation thesisInformation);

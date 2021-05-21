@@ -16,66 +16,23 @@ import com.sa.entity.Topic;
 
 /**
  * 
- * @author rcx
- * 添加教师信息
- * 教师List
- * 删除教师信息
- * 根据id获得教师信息
- * 更新教师信息
- * 查询教师信息
- * 根据no获得教师信息
- * 
- * 上传课题
- * 显示当前教师所上传的课题
- * 根据id获得课题信息
- * 修改课题
- * 删除课题
- * 显示所有的课题
- * 更改课题审核状态(审核通过 、 未通过)
- * 
- * @date 2020-12-14
- * @author rcx
- * 教师查询自己上传的课题中审核通过的课题列表
- * 教师上传任务书，把文件目录保存到db中
- * 教师上传开题报告，把文件目录保存到db中
- * 获取该教师所上传的文件信息，并保存在map中
- * 获得与文件路径相匹配的课题id 文件目录：E:\BSM\教师id\课题id\文件名 也就是倒数第二个值
- * 根据课程id 获得该属性下的文件信息 包括 任务书和开题报告的文件路径
- * 根据课程id 删除数据信息 把数据库中的信息删掉
- * 根据文件路径获得所有信息
- * 根据课程id 把任务书或者开题报告删掉 也就是把数据库中的指设置为:""
- * 
- * @date 2020-12-15
- * @author rcx
- * 根据任务书路径 或 开题报告 获得 TeacherTaskBookOpening信息
- * 根据课题id 删除任务书 或者 开题报告
- * 根据教师id 获得该教师管理的学生
- * 根据学生id 获得选题信息
- * 根据选题id 获得课题信息
- * 根据学生id 获得StudentTaskBookOpening信息
- * 根据学生No 审核学生上传的开题报告(1-->不通过  2--> 通过)
- * 
- * @date 2020-12-17
- * @author rcx
- * 显示所有的公告信息
- * 
- * @date 2020-12-18
- * @author rcx
- * 根据学生id获得学生提交的论文信息
- * 给予学生提交的论文评价-----通过、不通过
- * 添加学生成绩
- * 修改学生成绩
- * 根据学生id 获得学生成绩
- * 把最终论文上传  供admin查看
- * 显示所有的最终论文
- * 
- * @date 2020-12-10
- * @author rcx
- * 更新疑惑信息
- * 获得指定学生下的所有疑惑
- * 
- * 
- *
+ * @author LaoYu
+ *add, delete, update teacher 
+ *show all teacher
+ *get teacher information based on teacher id
+ *upload topic
+ *delete topic
+ *show all topic
+ *update topic status
+ *teacher get topics which are failed or passed separately
+ *get teacher_opening_report information, and save in the map
+ *delete opening report
+ *get topic information
+ *review student_opening_report
+ *show progress notification
+ *judge thesis result
+ *add, update student score
+ *student upload thesis
  */
 public interface ITeacherService {
 	int addTeacher(Teacher teacher);

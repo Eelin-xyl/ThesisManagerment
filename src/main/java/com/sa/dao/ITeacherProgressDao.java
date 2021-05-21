@@ -5,15 +5,9 @@ import java.util.List;
 import com.sa.entity.TeacherProgress;
 
 /**
- * @date 2020-12-17
- * @author rcx
- * 添加进度信息
- * 通过进度
- * 未通过进度
- * 根据学生id获得进度信息
- * 根据教师id获得进度信息
  * 
- *
+ * @author LaoYu
+ *add progress notification 
  */
 
 public interface ITeacherProgressDao {
