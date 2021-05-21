@@ -344,8 +344,8 @@ public class StudentController {
 		Date time = new Date();
 		top.setSelectTime(time);
 		
-		int num = studentService.addTopicToDb(top);
-		System.out.println("添加了"+num+"个选题");
+		//int num = studentService.addTopicToDb(top);
+		//System.out.println("添加了"+num+"个选题");
 		
 		Student student = studentService.getStudentNameById(id);
 		String studentNo = student.getStudentNo();
@@ -354,11 +354,11 @@ public class StudentController {
 		String thesisName = thesis.getThesisName();
 		
 		
-		StringBuffer sb = new StringBuffer();
-		sb.append("学号为");
-		sb.append(studentNo);
-		sb.append("的学生，选择了");
-		sb.append(thesisName);
+//		StringBuffer sb = new StringBuffer();
+//		sb.append("学号为");
+//		sb.append(studentNo);
+//		sb.append("的学生，选择了");
+//		sb.append(thesisName);
 		
 		studentThesisResult(response, request, model);
 		return "student/studentThesisResult.jsp";
@@ -449,8 +449,8 @@ public class StudentController {
 				
 				file.transferTo(new File(fileDb+File.separator+fileName));
 				
-				int num = studentService.uploadOpening(studentId, filePath.toString());
-				System.out.println("添加了"+num+"条信息");
+//				int num = studentService.uploadOpening(studentId, filePath.toString());
+//				System.out.println("添加了"+num+"条信息");
 				
 				model.addAttribute("message", "Upload successfully");
 				return "student/main.jsp";
@@ -476,13 +476,13 @@ public class StudentController {
 		if(deleteFile.exists()) {
 			flag = deleteFile.delete();
 			if(flag ) {
-				message = "删除成功";
+				message = "Delete successfully";
 			}else {
-				message = "删除失败";
+				message = "Fail to delete";
 			}
 			
 		}else {
-			message = "文件不存在";
+			message = "This file does not exist";
 		}
 		
 		ThesisInformation thesis = studentService.getInfoByFilePath(filePath);
@@ -571,8 +571,8 @@ public class StudentController {
 						
 						file.transferTo(new File(fileDb+File.separator+fileName));
 						
-						int num = studentService.uploadThesisInformation(studentId, filePath.toString());
-						System.out.println("添加了"+num+"条信息");
+//						int num = studentService.uploadThesisInformation(studentId, filePath.toString());
+//						System.out.println("添加了"+num+"条信息");
 						
 						model.addAttribute("message", "Upload thesis successfully.");
 						return "student/main.jsp";

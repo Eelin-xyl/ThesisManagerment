@@ -5,18 +5,11 @@ import java.util.List;
 import com.sa.entity.ThesisTitle;
 
 /**
- * @date 2021-05-11
- * @author Eelin
- * 添加课题
- * 根据教师id 查找课题List
- * 根据课题编号查找课题信息
- * 更新课题
- * 删除课题
- * 查找所有的课题(admin查询)
- * 修改status属性 (1==>未审核   2==>审核通过   3==> 审核不通过)
  * 
- * 
- *
+ * @author LaoYu
+ *add, delete, update, search topic
+ *update topic status
+ *admin search all topic
  */
 public interface IThesisTitleDao {
 	int addThesisTitle(ThesisTitle thesisTitle);

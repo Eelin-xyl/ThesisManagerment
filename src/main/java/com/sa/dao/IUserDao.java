@@ -9,7 +9,7 @@ import com.sa.entity.User;
  * 
  * @author LaoYu
  *search information based on id
- *modifypassword based on userno and password from html
+ *modify password based on userID and password from html
  */
 public interface IUserDao {
 	

@@ -5,15 +5,10 @@ import java.util.List;
 import com.sa.entity.Major;
 
 /**
- * @date 2021-05-10
- * @author Eelin
- * 查询全部的专业；
- * id ==> name
- * name ==> id
- * 根据name获得id
  * 
+ * @author LaoYu
+ *search all major
  */
-
 public interface IMajorDao {
 	
 	List<Major> getAllMajor();
