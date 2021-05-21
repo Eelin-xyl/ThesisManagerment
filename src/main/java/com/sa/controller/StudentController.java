@@ -60,7 +60,6 @@ public class StudentController {
 		return "student/addStudent.jsp";
 	}
 	
-//	private String realTimeTopicMessageOn = "";
 	
 	// 已废除
 	@RequestMapping(value="/add",method=RequestMethod.POST)
@@ -288,7 +287,7 @@ public class StudentController {
 	@RequestMapping(value="/modifyInfoToDb",method=RequestMethod.POST)
 	public String studentModifyInfoToDb(Model model,HttpServletRequest request,int id,String studentNo, String studentName,String sex,String majorOld,String major,String grade, String phone) throws Exception {
 		
-		// 以下代码是学生修改学生信息
+		// Update student information
 		int majorId = 0;
 		majorOld = new String(majorOld.getBytes("iso-8859-1"),"utf-8");
 		//departmentId =  departmentService.getIdByName(departmentOld);
@@ -382,22 +381,19 @@ public class StudentController {
 		return "student/studentThesisResult.jsp";
 	}
 	
-	@RequestMapping(value="/deleteChosenTopic")
-	public String studentDeleteChosenTopic(Model model,int studentId) throws Exception {
-		
-		// System.out.println(studentId);
-		StudentTaskBookOpening stbo = studentService.getSTBOInfoById(studentId);
-		if(stbo==null||"".equals(stbo)) {
-			int num = studentService.deleteTopic(studentId); 
-			System.out.println("成功退选 :"+num+"条数据");
-			model.addAttribute("message", "成功退选");
-			
-			return "student/main.jsp";
-		}else {
-			model.addAttribute("message", "已上传开题报告，不可退选");
-			return "student/main.jsp";
-		}
-	}
+	/*
+	 * @RequestMapping(value="/deleteChosenTopic") public String
+	 * studentDeleteChosenTopic(Model model,int studentId) throws Exception {
+	 * 
+	 * // System.out.println(studentId); StudentTaskBookOpening stbo =
+	 * studentService.getSTBOInfoById(studentId); if(stbo==null||"".equals(stbo)) {
+	 * int num = studentService.deleteTopic(studentId);
+	 * System.out.println("成功退选 :"+num+"条数据"); model.addAttribute("message",
+	 * "成功退选");
+	 * 
+	 * return "student/main.jsp"; }else { model.addAttribute("message",
+	 * "已上传开题报告，不可退选"); return "student/main.jsp"; } }
+	 */
 	
 	@RequestMapping(value="/fileDownload")
 	public ResponseEntity<byte[]> fileDownload(HttpServletRequest request, @RequestParam("filePath") String filePath,@RequestParam("fileName") String fileName, Model model) throws Exception {

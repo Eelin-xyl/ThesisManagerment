@@ -7,20 +7,13 @@ import org.apache.ibatis.annotations.Param;
 import com.sa.entity.Student;
 
 /**
- * @date 2020-12-10
- * @author rcx
  * 
- * 查询学生信息根据id
- * 添加学生
- * 查询全部学生
- * 删除学生
- * 更新学生
- * 查询学生信息根据 编号、姓名、编号和姓名
- * 
- * @date 2020-12-12
- * @author rcx
- * 根据no查询学生信息
- *
+ * @author LaoYu
+ *select student based on id
+ *add, delete, update student
+ *show student information based on student id
+ *show student information based on student name
+ *show all student
  */
 public interface IStudentDao {
 	Student selectStudent(int id);

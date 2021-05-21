@@ -11,53 +11,14 @@ import com.sa.entity.ThesisInformation;
 import com.sa.entity.ThesisTitle;
 import com.sa.entity.Topic;
 
+
 /**
  * 
- * @author rcx
- * 添加学生
- * 学生列表
- * 根据id获得学生信息
- * 更新学生信息
- * 删除学生信息
- * 查询学生信息
- * 根据no获得学生信息
- * 
- * 获得选题列表(除了已选的、不可选的课题)
- * 根据学生id获得选题信息(查看该学生是否选择了课题，没有的话返回null)
- * 添加选题信息(提交学生的选题信息)
- * 删除选题信息(学生退选课题)
- * 
- * @date 2020-12-15
- * @author rcx
- * 根据选题id 获得TeacherTaskBookOpening 信息
- * 根据学生id 获得StudentTaskBookOpening 信息
- * 上传任务书
- * 上传开题报告
- * 根据学生id 获得任务书和开题报告 Map(name,path)
- * 删除开题报告、任务书
- * 根据任务书路径 或 开题报告路径 获得信息
- * 
- * 
- * 
- * @date 2020-12-17
- * @author rcx
- * 根据课题id获得课题信息
- * 根据学生id获得阶段任务
- * 显示公告信息
- * 上传论文文件信息
- * 根据学生id获得学生提交的论文信息
- * 根据文件目录获得学生提交的论文信息
- * 根据学生id删除学生提交的论文信息
- * 
- * @date 2020-12-18
- * @author rcx
- * 根据学生id 获得学生提交的论文信息(重复的)
- * 
- * @date 2020-12-9
- * @author rcx
- * 添加学生提出的疑惑
- * 列出所有的疑惑
- *
+ * @author LaoYu
+ *add, delete, update, search student
+ *show all students
+ *get student information based on student id
+ *get available thesis topic list
  */
 public interface IStudentService {
 	

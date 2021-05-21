@@ -80,8 +80,8 @@
                                         <td>${teacher.sex }</td>
                                         <td>${teacher.phone }</td>
                                         <td>
-                                            <a href="<c:url value=" /admin/modifyTeacher?id=${teacher.id } " />">Modify</a>
-                                            <a href="<c:url value=" /admin/deleteTeacher?id=${teacher.id } " />">Delete</a>
+                                            <a href="<c:url value="/admin/modifyTeacher?id=${teacher.id } " />">Modify</a>
+                                            <a href="<c:url value="/admin/deleteTeacher?id=${teacher.id } " />">Delete</a>
                                         </td>
                                     </tr>
                                 </c:forEach>

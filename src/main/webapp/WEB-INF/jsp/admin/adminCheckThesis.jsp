@@ -39,8 +39,8 @@
                                         <td>${thesis.description }</td>
                                         <td>${thesis.statusName }</td>
                                         <td>
-                                            <a href="<c:url value=" /admin/agreeThesis?id=${thesis.id } " />">Pass</a> &nbsp;
-                                            <a href="<c:url value=" /admin/disagreeThesis?id=${thesis.id } " />">Fail</a>
+                                            <a href="<c:url value="/admin/agreeThesis?id=${thesis.id } " />">Pass</a> &nbsp;
+                                            <a href="<c:url value="/admin/disagreeThesis?id=${thesis.id } " />">Fail</a>
                                         </td>
                                     </tr>
                                 </c:forEach>

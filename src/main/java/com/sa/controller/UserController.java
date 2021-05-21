@@ -20,19 +20,16 @@ import com.sa.service.IStudentService;
 import com.sa.service.ITeacherService;
 import com.sa.service.IUserService;
 
+
 /**
- * @date 2020-12-6
- * @author rcx
- * adminLogin() 管理员登陆
- * teacherLogin() 教师登陆
- * studentLogin() 学生登陆
- * quitSystem() 退出系统
- * modifyPassword() 修改密码，由于管理员，教师，学生的修改密码相同，所以只用一个controller作为修改。
- *
- * @date 2020-12-11
- * @author rcx
- * 修改了teacherLogin() 方法，新增了查询教师信息的功能。并且写入session中。
- *
+ * 
+ * @author LaoYu
+ *adminlogin()
+ *teacherlogin()
+ *studentlogin()
+ *exit()
+ *modifypassword()--for admin,student,teacher
+ *wronglogin()-----message
  */
 
 @Controller

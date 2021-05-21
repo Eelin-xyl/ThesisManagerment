@@ -44,8 +44,8 @@
                                         <td>${thesisTitle.statusName }</td>
 
                                         <td>
-                                            <a href="<c:url value=" /teacher/modifyThesisTitleFrom?id=${thesisTitle.id } " />">Modify</a> &nbsp;
-                                            <a href="<c:url value=" /teacher/deleteThesisTitle?id=${thesisTitle.id } " />">Delete</a>
+                                            <a href="<c:url value="/teacher/modifyThesisTitleFrom?id=${thesisTitle.id } " />">Modify</a> &nbsp;
+                                            <a href="<c:url value="/teacher/deleteThesisTitle?id=${thesisTitle.id } " />">Delete</a>
                                         </td>
                                     </tr>
                                 </c:forEach>

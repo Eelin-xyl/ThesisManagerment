@@ -33,16 +33,13 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Information
-                                    Management</a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Information Management</a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="${pageContext.request.contextPath}/student/modifyInfo">Modify
-                                            Information</a>
+                                        <a href="${pageContext.request.contextPath}/student/modifyInfo">Modify Information</a>
                                     </li>
                                     <li>
-                                        <a href="${pageContext.request.contextPath}/student/modifyPassword">Modify
-                                            Password</a>
+                                        <a href="${pageContext.request.contextPath}/student/modifyPassword">Modify Password</a>
                                     </li>
                                 </ul>
                             </li>
@@ -57,8 +54,7 @@
                                         <a href="${pageContext.request.contextPath}/student/thesis">Topic Selection</a>
                                     </li>
                                     <li>
-                                        <a href="${pageContext.request.contextPath}/student/thesisResult">Topic
-                                            Result</a>
+                                        <a href="${pageContext.request.contextPath}/student/thesisResult">Topic Result</a>
                                     </li>
                                 </ul>
                             </li>
@@ -66,21 +62,17 @@
 
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Schedule
-                                    Management</a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Schedule Management</a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="${pageContext.request.contextPath}/student/viewTaskOpening">Assignment
-                                            Download</a>
+                                        <a href="${pageContext.request.contextPath}/student/viewTaskOpening">Assignment Download</a>
                                     </li>
                                     <li>
-                                        <a href="${pageContext.request.contextPath}/student/openingResult">Opening
-                                            Report</a>
+                                        <a href="${pageContext.request.contextPath}/student/openingResult">Opening Report</a>
                                     </li>
 
                                     <li>
-                                        <a href="${pageContext.request.contextPath}/student/sectionTask">Progress
-                                            Notification</a>
+                                        <a href="${pageContext.request.contextPath}/student/sectionTask">Progress Notification</a>
                                     </li>
                                 </ul>
                             </li>
@@ -88,15 +80,13 @@
 
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">File
-                                    Management</a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">File Management</a>
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="${pageContext.request.contextPath}/student/uploadFile">File Upload</a>
                                     </li>
                                     <li>
-                                        <a href="${pageContext.request.contextPath}/student/resourcesDownload">File
-                                            Review</a>
+                                        <a href="${pageContext.request.contextPath}/student/resourcesDownload">File Review</a>
                                     </li>
                                 </ul>
                             </li>

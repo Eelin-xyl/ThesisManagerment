@@ -85,8 +85,8 @@
                                         <th>${student.grade }</th>
                                         <th>${student.phone }</th>
                                         <th>
-                                            <a href="<c:url value=" /admin/modifyStudent?id=${student.id } " />">Modify</a>
-                                            <a href="<c:url value=" /admin/deleteStudent?id=${student.id } " />">Delete</a>
+                                            <a href="<c:url value="/admin/modifyStudent?id=${student.id } " />">Modify</a>
+                                            <a href="<c:url value="/admin/deleteStudent?id=${student.id } " />">Delete</a>
                                         </th>
                                     </tr>
                                 </c:forEach>

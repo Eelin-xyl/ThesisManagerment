@@ -25,6 +25,7 @@ public class Student {
 	private String filePath;
 	
 	private int thesisScore;
+	
 	public Student() {
 		super();
 		// TODO Auto-generated constructor stub
