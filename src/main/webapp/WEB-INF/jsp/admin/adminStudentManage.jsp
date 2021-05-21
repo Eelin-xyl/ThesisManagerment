@@ -86,8 +86,8 @@
                                         <td>${student.grade }</td>
                                         <td>${student.phone }</td>
                                         <td>
-                                            <a href="<c:url value=" /admin/modifyStudent?id=${student.id } " />">Modify</a>
-                                            <a href="<c:url value=" /admin/deleteStudent?id=${student.id } " />">Delete</a>
+                                            <a href="<c:url value="/admin/modifyStudent?id=${student.id } " />">Modify</a>
+                                            <a href="<c:url value="/admin/deleteStudent?id=${student.id } " />">Delete</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
