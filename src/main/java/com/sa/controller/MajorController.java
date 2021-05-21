@@ -17,7 +17,7 @@ import net.sf.json.JSONArray;
 
 /**
  * 
- * @author rcx
+ * @author Eelin
  * 
  * showAllMajor() 获得所有专业信息
  *

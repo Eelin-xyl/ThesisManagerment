@@ -16,8 +16,8 @@ import com.sa.entity.User;
 
 
 /**
- * @date 2020-12-11
- * @author rcx
+ * @date 2021-05-11
+ * @author Eelin
  * 这是个过滤器 用于验证用户登陆 (查找session)
  * 把图片的路径过滤掉，否则会出现图片无法加载
  * 

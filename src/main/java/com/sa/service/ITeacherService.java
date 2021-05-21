@@ -15,8 +15,7 @@ import com.sa.entity.ThesisTitle;
 import com.sa.entity.Topic;
 
 /**
- * 
- * @author LaoYu
+ * @author Eelin
  *add, delete, update teacher 
  *show all teacher
  *get teacher information based on teacher id
@@ -34,6 +33,7 @@ import com.sa.entity.Topic;
  *add, update student score
  *student upload thesis
  */
+
 public interface ITeacherService {
 	int addTeacher(Teacher teacher);
 	

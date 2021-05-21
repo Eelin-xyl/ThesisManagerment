@@ -6,7 +6,7 @@ import com.sa.entity.Department;
 
 /**
  * 
- * @author rcx
+ * @author Eelin
  * 
  * 显示院系列表
  * 根据id获得院系name

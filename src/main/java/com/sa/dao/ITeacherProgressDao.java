@@ -5,9 +5,9 @@ import java.util.List;
 import com.sa.entity.TeacherProgress;
 
 /**
- * 
- * @author LaoYu
- *add progress notification 
+ * @date 2021-05-17
+ * @author Eelin
+ * add progress notification 
  */
 
 public interface ITeacherProgressDao {

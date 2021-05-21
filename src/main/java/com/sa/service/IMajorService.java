@@ -6,7 +6,7 @@ import com.sa.entity.Major;
 
 /**
  * 
- * @author rcx
+ * @author Eelin
  * 
  * 获得专业列表
  * 根据id获得专业name

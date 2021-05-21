@@ -5,8 +5,8 @@ import java.util.List;
 import com.sa.entity.ThesisPaper;
 
 /**
- * @date 2020-12-18
- * @author rcx
+ * @date 2021-05-18
+ * @author Eelin
  * 添加最终论文
  * 查询所有论文
  *
