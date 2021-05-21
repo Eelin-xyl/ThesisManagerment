@@ -7,8 +7,8 @@ import com.sa.entity.ThesisPaper;
 /**
  * @date 2021-05-18
  * @author Eelin
- * 添加最终论文
- * 查询所有论文
+ * add thesis
+ * select thesis
  *
  */
 

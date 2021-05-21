@@ -61,10 +61,10 @@ public class UserController {
 		if(currentUser.getPermission()==1) {
 			HttpSession session = request.getSession();
 			session.setMaxInactiveInterval(3600);
-			// UsersInfo
+			// user info
 			session.setAttribute("currentUser", currentUser);
 			
-			// StudentInfo
+			// student info
 			Student student = studentService.getStudentByNO(userNo);
 			int majorId = student.getMajorId();
 			String majorName = majorService.getNameById(majorId);
@@ -78,10 +78,10 @@ public class UserController {
 		if(currentUser.getPermission()==2) {
 			HttpSession session = request.getSession();
 			session.setMaxInactiveInterval(3600);
-			// UserInfo
+			// user info
 			session.setAttribute("currentUser", currentUser);
 			
-			// TeacherInfo
+			// teacher info
 			Teacher teacher = teacherService.showInfoByNo(userNo);
 			int depId = teacher.getDepartmentId();
 			String depName = departmentService.getNameById(depId);
@@ -123,8 +123,6 @@ public class UserController {
 	@RequestMapping(value="/modifyPassword",method=RequestMethod.POST)
 	public String modifyPassword(Model model,String newPassword1,String currentUserNo) {
 		
-		/*System.out.println("new："+newPassword1);
-		System.out.println("No.："+currentUserNo);*/
 		int num = userService.modifyPassword(currentUserNo, newPassword1);
 		return "redirect:/successmodify";
 	}

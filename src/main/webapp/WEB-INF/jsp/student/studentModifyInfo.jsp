@@ -7,7 +7,7 @@
         <title>Student Information Management</title>
         <!-- <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
         <script type="text/javascript" src="${pageContext.request.contextPath}/js/majorManage.js"></script>
-        <script type="text/javascript" src="${pageContext.request.contextPath}/js/verifyPhone.js"></script>
+<%--         <script type="text/javascript" src="${pageContext.request.contextPath}/js/verifyPhone.js"></script> --%>
     </head>
 
     <body>
