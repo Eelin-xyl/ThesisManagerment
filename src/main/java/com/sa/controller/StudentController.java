@@ -256,8 +256,7 @@ public class StudentController {
 		student.setLastModifyTime(currentTime);
 		student.setPhone(phone);
 
-//		int num = studentService.updateStudent(student);
-//		System.out.println("Change the num of student："+num);
+		studentService.updateStudent(student);
 		
 		// get department based on major
 		int majId = student.getMajorId();
@@ -290,6 +289,8 @@ public class StudentController {
 		Date time = new Date();
 		top.setSelectTime(time);
 		
+		studentService.addTopicToDb(top);
+
 		Student student = studentService.getStudentNameById(id);
 		String studentNo = student.getStudentNo();
 		
@@ -339,6 +340,8 @@ public class StudentController {
 				
 				file.transferTo(new File(fileDb+File.separator+fileName));
 				
+				studentService.uploadOpening(studentId, filePath.toString());
+
 				model.addAttribute("message", "Upload successfully");
 				return "student/main.jsp";
 			}else {
@@ -376,14 +379,14 @@ public class StudentController {
 		if(thesis== null || "".equals(thesis)) {
 			
 		}else {
-			int num1 = studentService.deleteThesisInformation(studentId);
+			studentService.deleteThesisInformation(studentId);
 			System.out.println("Delete thesis successfully");
 		}
 		StudentTaskBookOpening STBO2 = studentService.getInfoByOpeningPath(filePath);
 		if(STBO2==null || "".equals(STBO2) ) {
 			
 		}else {
-			int num = studentService.resetOpening(studentId);
+			studentService.resetOpening(studentId);
 			System.out.println("Delete Opening Report successfully");
 		}
 		
@@ -448,7 +451,9 @@ public class StudentController {
 						}
 						
 						file.transferTo(new File(fileDb+File.separator+fileName));
-						
+
+						studentService.uploadThesisInformation(studentId, filePath.toString());
+
 						model.addAttribute("message", "Upload thesis successfully.");
 						return "student/main.jsp";
 					}else {
