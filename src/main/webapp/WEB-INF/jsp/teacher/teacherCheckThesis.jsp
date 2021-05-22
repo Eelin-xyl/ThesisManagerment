@@ -20,9 +20,7 @@
                     <div class="col-md-8">
                         <!-- <h4>CheckThesis</h4> -->
                         <ul class="list-inline">
-                            <li>File Management</li>
-                            <li>/</li>
-                            <li>Thesis Audition</li>
+                            <li>File Management    /	Thesis Audition</li>
                         </ul>
                         <table class="table">
                             <thead>

@@ -132,38 +132,6 @@ public class TeacherController {
 		return "teacher/teacherPublishProgressNotification.jsp";
 	}
 	
-	@RequestMapping(value="/checkProgress")
-	public String teacherCheckProgressForm(HttpServletRequest request,Model model) {
-		Teacher currentTeacher = (Teacher)request.getSession().getAttribute("teacher");
-		int teacherId = currentTeacher.getId();
-		
-		List<TeacherProgress> teacherProgressList = teacherService.getTeacherProgressByTeacherId(teacherId);
-		
-		for(int i=0;i<teacherProgressList.size();i++) {
-			int studentId = teacherProgressList.get(i).getStudentId();
-			String studentName = teacherService.getStudentInfoByStudentId(studentId).getStudentName();
-			int thesisId = teacherService.getTopicInfoByStudentId(studentId).getThesisId();
-			String thesisTitleName = teacherService.getThesisInfoByThesisId(thesisId).getThesisName();
-			
-			teacherProgressList.get(i).setStudentName(studentName);
-			teacherProgressList.get(i).setThesisTitleName(thesisTitleName);
-			
-			int status= teacherProgressList.get(i).getState();
-			if(status == 0) {
-				teacherProgressList.get(i).setStateName("Unreviewed");
-			}else if(status == 1) {
-				teacherProgressList.get(i).setStateName("Fail");
-			}else {
-				teacherProgressList.get(i).setStateName("Pass");
-			}
-				
-			
-		}
-		
-		model.addAttribute("allStudentProgressList", teacherProgressList);
-		
-		return "teacher/teacherCheckProgressNotification.jsp";
-	}
 	
 	@RequestMapping(value="/studentManage")
 	public String teacherStudentManageForm(HttpServletRequest request,Model model) {

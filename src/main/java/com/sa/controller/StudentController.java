@@ -116,12 +116,12 @@ public class StudentController {
 		Topic topic = studentService.chosenThesisTitle(studentId);
 		if(topic == null || "".equals(topic)) {
 			model.addAttribute("message", "Please select a topic first.");
-			return "student/studentViewTaskBookAndOpening.jsp";
+			return "student/studentAssignment.jsp";
 		}else {
 			int thesisId = topic.getThesisId();
 			TeacherTaskBookOpening ttbo = studentService.getFilePathByThesisId(thesisId);
 			if(ttbo==null || "".equals(ttbo)) {
-				return "student/studentViewTaskBookAndOpening.jsp";
+				return "student/studentAssignment.jsp";
 			}else {
 				String taskBookPath = ttbo.getTaskBook();
 				
@@ -146,7 +146,7 @@ public class StudentController {
 //				}
 				model.addAttribute("fileList", fileList);
 				
-				return "student/studentViewTaskBookAndOpening.jsp";
+				return "student/studentAssignment.jsp";
 			}
 			
 		}
@@ -171,14 +171,14 @@ public class StudentController {
 	}
 	
 	@RequestMapping(value="/resourcesDownload")
-	public String studentResourcesDownload(HttpServletRequest request,Model model) {
+	public String studentDownload(HttpServletRequest request,Model model) {
 		
 		Student currentUser = (Student)request.getSession().getAttribute("student");
 		int studentId = currentUser.getId();
 		
 		Map<String, String> fileList = studentService.getTaskBookOpeningToMap(studentId);
 		if(fileList.isEmpty()) {
-			return "student/studentResourcesDownload.jsp";
+			return "student/studentDownload.jsp";
 		}else {
 			ThesisInformation thesisInformation4Db = studentService.getInfoByStudentId(studentId);
 			if(thesisInformation4Db ==null) {
@@ -191,7 +191,7 @@ public class StudentController {
 			}
 			
 			model.addAttribute("fileList", fileList);
-			return "student/studentResourcesDownload.jsp";
+			return "student/studentDownload.jsp";
 		}
 	}
 	
