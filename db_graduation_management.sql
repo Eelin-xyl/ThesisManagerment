@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50731
 File Encoding         : 65001
 
-Date: 2021-05-22 16:51:11
+Date: 2021-05-22 17:41:00
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -270,25 +270,6 @@ CREATE TABLE `thesis_information` (
 INSERT INTO `thesis_information` VALUES ('16', '30', 'E:\\ThesisManagement\\student\\30\\07_INT404_Image_Morphological.pdf', '2', null);
 INSERT INTO `thesis_information` VALUES ('17', '31', 'E:\\ThesisManagement\\student\\31\\XJTLU Module Handbook CPT402-2020-21.docx', '2', null);
 INSERT INTO `thesis_information` VALUES ('19', '46', 'E:\\ThesisManagement\\student\\46\\Lect6-JTA.pdf', '2', null);
-
--- ----------------------------
--- Table structure for `thesis_paper`
--- ----------------------------
-DROP TABLE IF EXISTS `thesis_paper`;
-CREATE TABLE `thesis_paper` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `studentId` int(11) DEFAULT NULL,
-  `paperInfo` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  KEY `studentId` (`studentId`) USING BTREE,
-  CONSTRAINT `thesis_paper_ibfk_1` FOREIGN KEY (`studentId`) REFERENCES `student` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
-
--- ----------------------------
--- Records of thesis_paper
--- ----------------------------
-INSERT INTO `thesis_paper` VALUES ('2', '30', 'E:\\ThesisManagement\\thesis\\30\\03_INT404_ Image_Enhancment.pdf');
-INSERT INTO `thesis_paper` VALUES ('3', '31', 'E:\\ThesisManagement\\thesis\\31\\PRD.docx');
 
 -- ----------------------------
 -- Table structure for `thesis_title`
